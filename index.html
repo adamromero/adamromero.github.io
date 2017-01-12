@@ -1,98 +1,32 @@
+<!DOCTYPE html>
 <html>
-  <head>
-      <meta id="viewport" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-      <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <title>Test: Deep Link to Native App Launch</title>
-      <style>
-          body {
-            font-family: "San Francisco", "Helvetica Neue", "Lucida Grande";
-              color:black;
+    <head>
+    <title>iOS Automatic Deep Linking</title>
+    <script src='//code.jquery.com/jquery-1.11.2.min.js'></script>
+    <script src='//mobileesp.googlecode.com/svn/JavaScript/mdetect.js'></script>
+    <script>
+      (function ($, MobileEsp) {
+        // On document ready, redirect to the App on the App store.
+        $(function () {
+          if (typeof MobileEsp.DetectIos !== 'undefined' && MobileEsp.DetectIos()) {
+            // Add an iframe to twitter://, and then an iframe for the app store
+            // link. If the first fails to redirect to the Twitter app, the
+            // second will redirect to the app on the App Store. We use jQuery
+            // to add this after the document is fully loaded, so if the user
+            // comes back to the browser, they see the content they expect.
+            $('body').append('<iframe class="twitter-detect" src="twitter://" />')
+              .append('<iframe class="twitter-detect" src="itms-apps://itunes.com/apps/twitter" />');
           }
-          div {
-              text-align: center;
-          }
-          .download-app{
-              color:#999;
-              font-size:15px;
-          }
-          .download-app a {
-              color:rebeccapurple;
-              font-weight:bold;
-          }
-          .centered {
-              position: fixed;
-              top: 50%;
-              left: 50%;
-              margin-top: -180px;
-              margin-left: -145px;
-          }
-          .open-app {
-              margin: 0 0 25px;
-              overflow: hidden;
-              padding: 12px;
-              background-color: #eeeeee;
-              border: 1px solid rebeccapurple;
-              -webkit-border-radius: 5px;
-              border-radius: 5px;
-              font-size: 20px;
-              font-weight: bold;
-              color:rebeccapurple;
-              text-decoration: none;
-          }
-
-          .app-logo {
-              background-color:rebeccapurple;
-              margin-bottom:50px;
-              color: white;
-              padding:30px;
-              border-radius: 8px;
-              font-size:35px;
-          }
-      </style>
-  </head>
-  <body>
-      <div class="centered">
-          <div>
-            <span class="app-logo">My App</span>
-          </div>
-          <br>
-          <br>
-          <br>
-          <br>
-
-          <div><a id="open-app-link" class="open-app" href="javascript:;"> Open App</a></div>
-          <br>
-          <br>
-          <div class="download-app">
-            If you don't have app installed,
-            <br>
-              please
-             <a href="https://itunes.apple.com/us/app/facebook/id284882215?mt=8">download</a>
-              it at App store.
-          </div>
-          <em>This uses Linkedin app store details for testing.</em>
-      </div>
-      <script src="deeplink-to-native-app.min.js"></script>
-
-      <script>
-          !(function($) {
-              $(document).ready(function() {
-                  /** Initialize Deeplinking ***/
-                  $(document).ready(function() {
-                      NativeAppLauncher.init({
-                          appLauncherElId: 'open-app-link', // Element Id of App Launcher button.
-                          notSupportedMessage: 'Sorry, you’ll need to use a different browser to do this.',
-                          universalLinkUrl: 'http://linkedin.com',
-                          appUri: 'linkedin://',
-                          androidAppId: 'com.linkedin.android',
-                          iOsAppStore:'https://itunes.apple.com/us/app/linkedin/id288429040?mt=8',
-                          debug:false // Optional
-                          //campaignCode: 'this-is-test-campaign' // optional, this appends campaign on app store url.
-                      });
-                  });
-              });
-          })(jQuery);
-      </script>
-
-  </body>
+        });
+      })(jQuery, MobileEsp);
+    </script>
+    <style type="text/css">
+      .twitter-detect {
+        display: none;
+      }
+    </style>
+    </head>
+    <body>
+    <p>Website content.</p>
+    </body>
 </html>
