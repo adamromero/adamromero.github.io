@@ -9,7 +9,14 @@
 <img class="panzoom-element" src="http://tbpdca.org/wp-content/uploads/bb-plugin/cache/Puppy-circle.jpg" />
 </body>
 <script type="text/javascript">
-	$(".panzoom-element").panzoom();
+	$(".panzoom-element").panzoom({
+        cursor: false,
+        startTransform: "scale(1.0)",
+        increment: 0.7,
+        minScale: 1,
+        disablePan: true,
+        contain: "invert"
+    });
 </script>
 </html>
 
