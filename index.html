@@ -6,10 +6,12 @@
 	<script type="text/javascript" src="smartJQueryZoom-master/src/e-smart-zoom-jquery.js"></script>>
 </head>
 <body>
-<img class="panzoom-element" src="https://placeimg.com/640/480/any" />
+<img class="panzoom-element" src="https://placeimg.com/640/480/nature" />
 </body>
 <script type="text/javascript">
-	$(".panzoom-element").smartZoom();
+	$(".panzoom-element").smartZoom({
+        'scrollEnabled': false
+    });
 </script>
 </html>
 
