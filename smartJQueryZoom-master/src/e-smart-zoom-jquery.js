@@ -660,9 +660,7 @@
 		  		cssObject[smartData.transitionObject.transform] = 'translateX('+left+'px) translateY('+top+'px) scale('+width/originalSize.width+','+height/originalSize.height+')';
 		  	if(callback != null){
 		  		smartData.transitionObject.cssAnimHandler = callback;
-			if ($.support.transition !== undefined) {
           target.one($.support.transition.end, smartData.transitionObject.cssAnimHandler);
-			}
         }
 		  	target.css(cssObject); // apply css transformation
 		}else{ // use JQuery animate if css transition is not supported
