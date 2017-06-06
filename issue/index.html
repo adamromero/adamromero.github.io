@@ -3,18 +3,19 @@
 <head>
 	<title>Test zoom</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="jquery.panzoom-master/dist/jquery.panzoom.min.js"></script>>
+	<script type="text/javascript" src="pinch-zoom-master/lib/pinch.js"></script>
 </head>
 <body>
-<img class="panzoom-element" src="http://tbpdca.org/wp-content/uploads/bb-plugin/cache/Puppy-circle.jpg" />
+<div class="wrapper">
+    <img class="panzoom-element" src="http://www.hardwickagriculture.org/blog/wp-content/uploads/placeholder.jpg" />
+</div>
 </body>
 <script type="text/javascript">
-	$(".panzoom-element").panzoom({
-        cursor: false,
-        startTransform: "scale(1.0)",
-        increment: 0.7,
-        minScale: 1,
-        panOnlyWhenZoomed: true
+	var pinchZoom = require('pinch-zoom')
+    var el = document.querySelector('.wrapper')
+    var pzoom = pinchZoom(el, {
+        draggable: true,
+        maxScale: 4
     });
 </script>
 </html>
