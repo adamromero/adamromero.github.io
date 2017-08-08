@@ -11,11 +11,8 @@
 </div>
 </body>
 <script type="text/javascript">
-	var pinchZoom = require('pinch-zoom')
-    var el = document.querySelector('.wrapper')
-    var pzoom = pinchZoom(el, {
-        draggable: true,
-        maxScale: 4
+	$(document).ready(function() {
+        $(".panzoom-element").smartZoom(); // start plugin behaviour
     });
 </script>
 </html>
