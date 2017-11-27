@@ -5,39 +5,133 @@
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
-<img id="hammer" class="pinch" src="https://extension.usu.edu/cache/images/Dog-Club.jpg" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<img class="imageContainer" src="https://extension.usu.edu/cache/images/Dog-Club.jpg" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 <script>
-	(function() {
-    var ham = new Hammer( $( ".pinch" )[ 0 ], {
-      domEvents: true
-    } );
-    var width = 1900;
-    var height = 400;
-    var left = 950;
-    var top = 220;
-    ham.get('pinch').set({ enable: true });
-    $( ".pinch" ).on( "pinch", function( e ) {
-      console.log( "pinch" );
-       if ( width * e.originalEvent.gesture.scale >= 300 ) {
-       $( this ).find( "img" ).css({
-         width: width * e.originalEvent.gesture.scale,
-         "margin-left": -left * e.originalEvent.gesture.scale,
-         height: height * e.originalEvent.gesture.scale,
-         "margin-top": -top * e.originalEvent.gesture.scale
-       });
-       }
-       console.log( e.originalEvent.gesture.scale );
-    } );
-    $( ".pinch" ).on( "pinchend", function( e ) {
-      width = width * e.originalEvent.gesture.scale;
-      height = height * e.originalEvent.gesture.scale;
-      left = left * e.originalEvent.gesture.scale;
-      top = top * e.originalEvent.gesture.scale;
-      console.log( width );
-    } );
-  } )();
+'use strict';
+
+const imageUrl = 'https://source.unsplash.com/random';
+const imageContainer = document.querySelector('.imageContainer');
+
+let minScale = 1;
+let maxScale = 4;
+let imageWidth;
+let imageHeight;
+let containerWidth;
+let containerHeight;
+let displayImageX = 0;
+let displayImageY = 0;
+let displayImageScale = 1;
+
+let displayDefaultWidth;
+let displayDefaultHeight;
+
+let rangeX = 0;
+let rangeMaxX = 0;
+let rangeMinX = 0;
+
+let rangeY = 0;
+let rangeMaxY = 0;
+let rangeMinY = 0;
+
+let displayImageRangeY = 0;
+
+let displayImageCurrentX = 0;
+let displayImageCurrentY = 0;
+let displayImageCurrentScale = 1;
+
+
+function resizeContainer() {
+  containerWidth = imageContainer.offsetWidth;
+  containerHeight = imageContainer.offsetHeight;
+  if (displayDefaultWidth !== undefined && displayDefaultHeight !== undefined) {
+    displayDefaultWidth = displayImage.offsetWidth;
+    displayDefaultHeight = displayImage.offsetHeight;
+    updateRange();
+    displayImageCurrentX = clamp( displayImageX, rangeMinX, rangeMaxX );
+    displayImageCurrentY = clamp( displayImageY, rangeMinY, rangeMaxY );
+    updateDisplayImage(
+      displayImageCurrentX,
+      displayImageCurrentY,
+      displayImageCurrentScale );
+  }
+}
+
+resizeContainer();
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(min, value), max);
+}
+
+function clampScale(newScale) {
+  return clamp(newScale, minScale, maxScale);
+}
+
+window.addEventListener('resize', resizeContainer, true);
+
+const displayImage = new Image();
+displayImage.src = imageUrl;
+displayImage.onload = function(){
+  imageWidth = displayImage.width;
+  imageHeight = displayImage.height;
+  imageContainer.appendChild(displayImage);
+  displayImage.addEventListener('mousedown', e => e.preventDefault(), false);
+  displayDefaultWidth = displayImage.offsetWidth;
+  displayDefaultHeight = displayImage.offsetHeight;
+  rangeX = Math.max(0, displayDefaultWidth - containerWidth);
+  rangeY = Math.max(0, displayDefaultHeight - containerHeight);
+}
+
+imageContainer.addEventListener('wheel', e => {
+  displayImageScale = displayImageCurrentScale = clampScale(displayImageScale + (e.wheelDelta / 800));
+  updateRange();
+  displayImageCurrentX = clamp(displayImageCurrentX, rangeMinX, rangeMaxX)
+  displayImageCurrentY = clamp(displayImageCurrentY, rangeMinY, rangeMaxY)
+	updateDisplayImage(displayImageCurrentX, displayImageCurrentY, displayImageScale);  
+}, false);
+
+function updateDisplayImage(x, y, scale) {
+  const transform = 'translateX(' + x + 'px) translateY(' + y + 'px) translateZ(0px) scale(' + scale + ',' + scale + ')';
+  displayImage.style.transform = transform;
+  displayImage.style.WebkitTransform = transform;
+  displayImage.style.msTransform = transform;
+}
+
+function updateRange() {
+  rangeX = Math.max(0, Math.round(displayDefaultWidth * displayImageCurrentScale) - containerWidth);
+  rangeY = Math.max(0, Math.round(displayDefaultHeight * displayImageCurrentScale) - containerHeight);
+  
+  rangeMaxX = Math.round(rangeX / 2);
+  rangeMinX = 0 - rangeMaxX;
+
+  rangeMaxY = Math.round(rangeY / 2);
+  rangeMinY = 0 - rangeMaxY;
+}
+
+const hammertime = new Hammer(imageContainer);
+
+hammertime.get('pinch').set({ enable: true });
+hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+
+hammertime.on('pan', ev => {  
+  displayImageCurrentX = clamp(displayImageX + ev.deltaX, rangeMinX, rangeMaxX);
+  displayImageCurrentY = clamp(displayImageY + ev.deltaY, rangeMinY, rangeMaxY);
+	updateDisplayImage(displayImageCurrentX, displayImageCurrentY, displayImageScale);
+});
+
+hammertime.on('pinch pinchmove', ev => {
+  displayImageCurrentScale = clampScale(ev.scale * displayImageScale);
+  updateRange();
+  displayImageCurrentX = clamp(displayImageX + ev.deltaX, rangeMinX, rangeMaxX);
+  displayImageCurrentY = clamp(displayImageY + ev.deltaY, rangeMinY, rangeMaxY);
+  updateDisplayImage(displayImageCurrentX, displayImageCurrentY, displayImageCurrentScale);
+});
+
+hammertime.on('panend pancancel pinchend pinchcancel', () => {
+  displayImageScale = displayImageCurrentScale;
+  displayImageX = displayImageCurrentX;
+  displayImageY = displayImageCurrentY;
+});  
 </script>
 </body>
 </html>
