@@ -5,16 +5,39 @@
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
-<img id="hammer" src="https://extension.usu.edu/cache/images/Dog-Club.jpg" />
+<img id="hammer" class="pinch" src="https://extension.usu.edu/cache/images/Dog-Club.jpg" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 <script>
-	var myElement = document.getElementById('hammer');
-	var hammertime = new Hammer(myElement);
-	hammertime.on('pan', function(ev) {
-		console.log(ev);
-	});
-	hammertime.get('pinch').set({ enable: true });
-	hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+	(function() {
+    var ham = new Hammer( $( ".pinch" )[ 0 ], {
+      domEvents: true
+    } );
+    var width = 1900;
+    var height = 400;
+    var left = 950;
+    var top = 220;
+    ham.get('pinch').set({ enable: true });
+    $( ".pinch" ).on( "pinch", function( e ) {
+      console.log( "pinch" );
+       if ( width * e.originalEvent.gesture.scale >= 300 ) {
+       $( this ).find( "img" ).css({
+         width: width * e.originalEvent.gesture.scale,
+         "margin-left": -left * e.originalEvent.gesture.scale,
+         height: height * e.originalEvent.gesture.scale,
+         "margin-top": -top * e.originalEvent.gesture.scale
+       });
+       }
+       console.log( e.originalEvent.gesture.scale );
+    } );
+    $( ".pinch" ).on( "pinchend", function( e ) {
+      width = width * e.originalEvent.gesture.scale;
+      height = height * e.originalEvent.gesture.scale;
+      left = left * e.originalEvent.gesture.scale;
+      top = top * e.originalEvent.gesture.scale;
+      console.log( width );
+    } );
+  } )();
 </script>
 </body>
 </html>
