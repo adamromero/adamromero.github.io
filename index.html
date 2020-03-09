@@ -1,21 +1,460 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Test zoom</title>
-	<script src="jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="elevatezoom-master/jquery.elevatezoom.js"></script>
-</head>
-<body>
-<<<<<<< HEAD
+   <head>
+      <title>Adam Romero | Web Developer</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      <link
+         href="https://fonts.googleapis.com/css?family=Oswald"
+         rel="stylesheet"
+      />
+      <link
+         href="https://fonts.googleapis.com/css?family=Varela+Round"
+         rel="stylesheet"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
+      />
+      <link rel="stylesheet" type="text/css" href="dist/main.css" />
+   </head>
+   <!--wrathful-scarf.surge.sh-->
+   <body class="preload">
+      <div class="wrapper">
+         <header class="header">
+            <div class="header__inner row">
+               <div class="header__heading">
+                  <div>
+                     <h1 class="header__name">
+                        Adam Romero
+                     </h1>
+                     <div class="header__title">
+                        Web Developer
+                     </div>
+                  </div>
+                  <div class="header__icons">
+                     <a
+                        class="header__icon social-media-icon icon-mail"
+                        href="mailto:adamromero89@gmail.com"
+                        title="Email"
+                     ></a>
+                     <a
+                        class="header__icon social-media-icon icon-github"
+                        href="https://github.com/adamromero"
+                        title="Github"
+                        target="_blank"
+                     ></a>
+                     <a
+                        class="header__icon social-media-icon icon-linkedin"
+                        href="https://www.linkedin.com/in/adam-romero-9848a39a/"
+                        title="LinkedIn"
+                        target="_blank"
+                     ></a>
+                  </div>
+               </div>
+               <i id="triggerMenu" class="header__down icon-chevron-down"></i>
+               <div class="header__nav">
+                  <div data-tab="experience" class="header__navtab">
+                     Experience
+                  </div>
+                  <div data-tab="work" class="header__navtab">
+                     Work Projects
+                  </div>
+                  <div data-tab="personal" class="header__navtab">
+                     Personal Projects
+                  </div>
+                  <div data-tab="contact" class="header__navtab">Contact</div>
+                  <div class="navigation-line"></div>
+               </div>
+            </div>
+         </header>
+         <div class="content">
+            <div data-content="experience" class="content__panel row">
+               <h2 class="content__heading">Experience</h2>
+               <div class="experience__grid">
+                  <div class="experience__grid-item">
+                     <h3>About</h3>
+                     <div class="content__text">
+                        This is my portfolio site displaying various web
+                        development projects I've worked on both professionally
+                        and on my own time. Feel free to network with me through
+                        social media.
+                        <a class="link" href="resume.pdf" target="_blank"
+                           >Download Resume</a
+                        >
+                     </div>
+                     <h3>Technical Skills</h3>
+                     <ul class="content__text content__text--bullet">
+                        <li>
+                           HTML <i class="devicon-html5-plain"></i>, CSS
+                           <i class="devicon-css3-plain"></i>, JavaScript
+                           <i class="devicon-javascript-plain"></i>, C#
+                           <i class="devicon-csharp-plain"></i>, MySQL
+                           <i class="devicon-mysql-plain"></i>
+                        </li>
+                        <li>
+                           Sass <i class="devicon-sass-original"></i>, jQuery
+                           <i class="devicon-jquery-plain"></i>, Node
+                           <i class="devicon-nodejs-plain"></i>, Express
+                           <i class="devicon-express-original"></i>, React
+                           <i class="devicon-react-original"></i>, Webpack
+                           <i class="devicon-webpack-plain"></i>
+                        </li>
+                        <li>
+                           Git <i class="devicon-git-plain"></i>, Tortoise SVN
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="experience__grid-item">
+                     <h3>Education</h3>
+                     <ul class="content__text content__text--bullet">
+                        <li>
+                           AA in Business Administration (June 2011)
+                           <div>Cuesta College</div>
+                        </li>
+                        <li>
+                           BS in Business Administration - Information Systems
+                           (June 2015)
+                           <div>Cal Poly San Luis Obispo</div>
+                        </li>
+                     </ul>
+                     <h3>Employment</h3>
+                     <ul class="content__text content__text--bullet">
+                        <li>
+                           <img
+                              src="dist/graphics/auspient.svg"
+                              width="100"
+                              alt="Auspient"
+                           />
+                           <div>
+                              Auspient
+                              <div class="inline-block">
+                                 (August 2015 - Present)
+                              </div>
+                           </div>
+                           <div>Front-End Developer</div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div data-content="work" class="content__panel row">
+               <h2 class="content__heading">Work Projects</h2>
+               <div class="content__grid">
+                  <div class="content__grid-item">
+                     <div class="content__link">
+                        <img
+                           class="content__image"
+                           src="dist/graphics/lls.png"
+                           alt="LeftLane Sports"
+                        />
+                        <div class="content__overlay">LeftLane Sports</div>
+                        <div class="content__info hide">
+                           <img
+                              class="content__image"
+                              src="dist/graphics/lls.png"
+                              alt="LeftLane Sports"
+                           />
+                           <div class="content__row">
+                              <span class="bold">Description:</span> This
+                              project was a front end redesign of LeftLane
+                              Sports. The site was converted from desktop only
+                              to responsive design. The redesign increased
+                              mobile conversion by 500% along with an over 120%
+                              increase on tablet devices. The project was
+                              completed within 3 months by myself and one other
+                              front end developer.
+                              <a
+                                 class="link"
+                                 href="https://outdoorindustry.org/press-release/leftlanesports-com-launches-redesigned-website-increasing-mobile-conversion-500/"
+                                 target="_blank"
+                                 >Read about the redesign here.</a
+                              >
+                           </div>
+                           <a
+                              class="project-details__link"
+                              href="https://www.leftlanesports.com/"
+                              target="_blank"
+                           >
+                              Visit Project
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="content__grid-item">
+                     <div class="content__link">
+                        <img
+                           class="content__image"
+                           src="dist/graphics/agu.png"
+                           alt="ACTIVE GearUp"
+                        />
+                        <div class="content__overlay">ACTIVE GearUp</div>
+                        <div class="content__info hide">
+                           <img
+                              class="content__image"
+                              src="dist/graphics/agu.png"
+                              alt="ACTIVE GearUp"
+                           />
+                           <div class="content__row">
+                              <span class="bold">Description:</span> This
+                              project was a front end redesign of Active GearUp.
+                              The site was converted from desktop only to
+                              responsive design. The project was completed
+                              within 2 months by myself and one other front end
+                              developer.
+                           </div>
+                           <a
+                              class="project-details__link"
+                              href="https://gearup.active.com/"
+                              target="_blank"
+                           >
+                              Visit Project
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="content__grid-item">
+                     <div class="content__link">
+                        <img
+                           class="content__image"
+                           src="dist/graphics/ows.png"
+                           alt="Overton Workshop"
+                        />
+                        <div class="content__overlay">Overton Workshop</div>
+                        <div class="content__info hide">
+                           <img
+                              class="content__image"
+                              src="dist/graphics/ows.png"
+                              alt="Overton Workshop"
+                           />
+                           <div class="content__row">
+                              <span class="bold">Description:</span> This
+                              project was a newly created website following the
+                              same design of the other sites. The site was
+                              previously a single landing page with links to
+                              it's three clothing brands. The project was
+                              completed within 2 months primarily by myself with
+                              some assistance of one other front end developer.
+                           </div>
+                           <a
+                              class="project-details__link"
+                              href="https://www.overtonworkshop.com/"
+                              target="_blank"
+                           >
+                              Visit Project
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="content__grid-item">
+                     <div class="content__link">
+                        <img
+                           class="content__image"
+                           src="dist/graphics/aus.png"
+                           alt="Auspient"
+                        />
+                        <div class="content__overlay">Auspient</div>
+                        <div class="content__info hide">
+                           <img
+                              class="content__image"
+                              src="dist/graphics/aus.png"
+                              alt="Auspient"
+                           />
+                           <div class="content__row">
+                              <span class="bold">Description:</span> This
+                              project was a front end redesign of the Auspient
+                              company website. The site was converted from an
+                              old early 2000's style desktop site to a
+                              responsive design. The project was completed
+                              within 2 months and was built myself with mockups
+                              provided by our web designer.
+                           </div>
+                           <a
+                              class="project-details__link"
+                              href="https://www.auspient.com"
+                              target="_blank"
+                           >
+                              Visit Project
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div data-content="personal" class="content__panel row">
+               <h2 class="content__heading">Personal Projects</h2>
+               <div class="content__grid">
+                  <div class="content__grid-item">
+                     <div class="content__link">
+                        <img
+                           class="content__image"
+                           src="dist/graphics/carvings.png"
+                           alt="Nightmare Carvings"
+                        />
+                        <div class="content__overlay">Nightmare Carvings</div>
+                        <div class="content__info hide">
+                           <img
+                              class="content__image"
+                              src="dist/graphics/carvings.png"
+                              alt="Nightmare Carvings"
+                           />
+                           <div class="content__row">
+                              <span class="bold">Description:</span> This is an
+                              ecommerce site selling Halloween pumpkin carving
+                              patterns for a dollar each.
+                           </div>
+                           <div class="content__row">
+                              <span class="bold">Technologies:</span> Node,
+                              Express, React, Stripe
+                           </div>
+                           <div class="content__row">
+                              <a
+                                 class="project-details__link"
+                                 href="https://nightmarecarvings.herokuapp.com/"
+                                 target="_blank"
+                              >
+                                 Visit Project
+                              </a>
+                           </div>
+                           <div class="content__row content__row--nbm">
+                              <a
+                                 class="project-details__link"
+                                 href="https://github.com/adamromero/nightmarecarvings"
+                                 target="_blank"
+                              >
+                                 Visit Github
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="content__grid-item">
+                     <div class="content__link">
+                        <img
+                           class="content__image"
+                           src="dist/graphics/cant-sleep.png"
+                           alt="Can't Sleep"
+                        />
+                        <div class="content__overlay">Can't Sleep?</div>
+                        <div class="content__info hide">
+                           <img
+                              class="content__image"
+                              src="dist/graphics/cant-sleep.png"
+                              alt="Can't Sleep"
+                           />
+                           <div class="content__row">
+                              <span class="bold">Description:</span>
+                              This is a horror themed full stack website that
+                              includes various urban legends, unsolved
+                              mysteries, and creepy YouTube videos. There is
+                              also an administrator page that provides CRUD
+                              functionality to the site content. The
+                              administrator page requires login to access.
+                           </div>
+                           <div class="content__row">
+                              <span class="bold">Technologies:</span> Node,
+                              Express, EJS, MySQL
+                           </div>
+                           <div class="content__row">
+                              <a
+                                 class="project-details__link"
+                                 href="http://radiant-meadow-91835.herokuapp.com"
+                                 target="_blank"
+                              >
+                                 Visit Project
+                              </a>
+                           </div>
+                           <div class="content__row content__row--nbm">
+                              <a
+                                 class="project-details__link"
+                                 href="https://github.com/adamromero/cant-sleep"
+                                 target="_blank"
+                              >
+                                 Visit Github
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="content__grid-item">
+                     <div class="content__link">
+                        <img
+                           class="content__image"
+                           src="dist/graphics/chess.png"
+                           alt="Chess"
+                        />
+                        <div class="content__overlay">Chess</div>
+                        <div class="content__info hide">
+                           <img
+                              class="content__image"
+                              src="dist/graphics/chess.png"
+                              alt="Chess"
+                           />
+                           <div class="content__row">
+                              <span class="bold">Description:</span>
+                              Basic Chess game built with vanilla JavaScript.
+                           </div>
+                           <div class="content__row">
+                              <span class="bold">Technologies:</span> JavaScript
+                           </div>
+                           <div class="content__row">
+                              <a
+                                 class="project-details__link"
+                                 href="http://abundant-sugar.surge.sh/"
+                                 target="_blank"
+                              >
+                                 Visit Project
+                              </a>
+                           </div>
+                           <div class="content__row content__row--nbm">
+                              <a
+                                 class="project-details__link"
+                                 href="https://github.com/adamromero/chess"
+                                 target="_blank"
+                              >
+                                 Visit Github
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="project-details">
+               <div id="closeDetails" class="project-details__close">Close</div>
+               <div class="project-details__text"></div>
+            </div>
+            <footer class="footer" data-content="contact">
+               <div class="row">
+                  <h2 class="content__heading">Contact</h2>
+               </div>
+               <div class="row footer__icons">
+                  <a
+                     class="footer__icon social-media-icon icon-mail"
+                     href="mailto:adamromero89@gmail.com"
+                     title="Email"
+                  ></a>
+                  <a
+                     class="footer__icon social-media-icon icon-github"
+                     href="https://github.com/adamromero"
+                     title="Github"
+                     target="_blank"
+                  ></a>
+                  <a
+                     class="footer__icon social-media-icon icon-linkedin"
+                     href="https://www.linkedin.com/in/adam-romero-9848a39a/"
+                     title="LinkedIn"
+                     target="_blank"
+                  ></a>
+               </div>
+               <div class="footer__copy content__text">
+                  &copy; <span id="year"></span> Adam Romero
+               </div>
+            </footer>
+         </div>
 
-<img class="panzoom-element" src="image1.png" data-zoom-image="image1.jpg" />
-
-=======
-<img class="panzoom-element" src="http://www.hardwickagriculture.org/blog/wp-content/uploads/placeholder.jpg" />
->>>>>>> 1be34ea82f6425a04fc65ef7984264ab50d1c882
-</body>
-<script type="text/javascript">
-    $('.panzoom-element').elevateZoom(); 
-</script>
+         <div class="overlay"></div>
+      </div>
+      <script src="dist/bundle.js"></script>
+   </body>
 </html>
-

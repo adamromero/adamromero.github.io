@@ -1,0 +1,248 @@
+.row {
+   max-width: rem(1200px);
+   margin: auto;
+   padding: 0 rem(20px);
+}
+
+.wrapper {
+   background: black;
+   position: relative;
+}
+
+.content {
+   padding: rem(96px) 0 0;
+
+   @media (min-width: $mobile) {
+      font-size: rem(18px);
+   }
+}
+
+.content__panel {
+   margin: auto;
+   padding-top: rem(20px);
+   color: white;
+}
+
+.content__heading {
+   font-size: rem(16px);
+   text-transform: uppercase;
+   border-bottom: rem(4px) solid $jade;
+   letter-spacing: rem(5px);
+   padding: 0 0 rem(5px);
+   color: white;
+
+   @media (min-width: $mobile) {
+      font-size: rem(18px);
+   }
+}
+
+.inline-block {
+   display: inline-block;
+}
+
+.bold {
+   font-weight: bold;
+}
+
+.hide {
+   display: none;
+}
+
+.hidden-panel {
+   visibility: hidden;
+   opacity: 0;
+}
+
+.content__row {
+   margin: rem(16px) 0;
+}
+
+.content__row--nbm {
+   margin-bottom: 0;
+}
+
+.content__image {
+   max-width: 100%;
+   margin: auto;
+   display: block;
+
+   @media (min-width: $mobile) {
+      max-width: rem(300px);
+   }
+}
+
+.link {
+   color: $jade;
+   text-decoration: none;
+}
+
+.content__text {
+   font-family: "Varela Round", sans-serif;
+   letter-spacing: rem(0.4px);
+   color: white;
+   margin: rem(16px) 0;
+}
+
+.content__text--bullet {
+   padding: 0 0 0 rem(20px);
+
+   li {
+      margin: rem(10px) 0;
+   }
+}
+
+.content__about {
+   padding-bottom: rem(20px);
+}
+
+.content__grid {
+   display: grid;
+
+   @media (min-width: $mobile) {
+      grid-template-columns: auto auto;
+   }
+}
+
+.content__grid-item {
+   padding: rem(20px);
+   text-align: center;
+}
+
+.content__overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   text-align: center;
+   color: white;
+   text-shadow: 3px 3px 5px black;
+   font-size: rem(16px);
+   @include transition(all 0.3s ease-in-out);
+   text-transform: uppercase;
+   font-weight: bold;
+   background: rgba(0, 0, 0, 0.45);
+
+   &:hover,
+   &.is-active {
+      background: rgba(9, 185, 106, 0.5);
+   }
+}
+
+.content__link {
+   max-width: rem(300px);
+   width: 100%;
+   display: inline-block;
+   position: relative;
+   min-height: rem(164px);
+}
+
+.experience__grid {
+   display: grid;
+
+   @media (min-width: $mobile) {
+      grid-template-columns: 50% 50%;
+   }
+}
+
+.experience__grid-item {
+   padding: 0 rem(32px 20px) 0;
+}
+
+.social-media-icon {
+   color: white;
+
+   &:hover {
+      color: $jade;
+      @include transition(color 0.3s);
+   }
+}
+
+.project-details {
+   position: fixed;
+   color: white;
+   background: black;
+   max-width: rem(550px);
+   width: 100%;
+   min-height: rem(210px);
+   border: rem(2px) solid #0fb969;
+   border-radius: rem(3px);
+   padding: rem(13px 13px 22px);
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(0);
+   transform-origin: center;
+   box-sizing: border-box;
+   visibility: hidden;
+   @include transition(all 0.3s ease-in-out);
+   -webkit-font-smoothing: antialiased;
+   font-family: "Varela Round", sans-serif;
+
+   &.is-active {
+      transform: translate(-50%, -50%) scale(1);
+      z-index: 9999;
+      opacity: 1;
+      visibility: visible;
+   }
+}
+
+.project-details__link {
+   border: rem(2px) solid white;
+   padding: rem(3px 10px);
+   color: white;
+   border-radius: rem(3px);
+   background: black;
+   margin: auto;
+   display: block;
+   text-align: center;
+   white-space: nowrap;
+   text-decoration: none;
+   @include transition(all 0.3s ease-in-out);
+
+   &:hover {
+      border-color: $jade;
+      color: $jade;
+   }
+}
+
+.project-details__close {
+   text-align: center;
+   padding: rem(5px) 0 rem(10px);
+   cursor: pointer;
+   width: rem(50px);
+   margin: auto;
+   @include transition(color 0.3s ease-in-out);
+
+   &:hover {
+      color: $jade;
+   }
+}
+
+.overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   background: rgba(0, 0, 0, 0.67);
+   z-index: 999;
+   display: none;
+
+   &.is-active {
+      display: block;
+   }
+}
+
+.success {
+   color: $spring-green;
+   padding: 0 0 rem(16px);
+}
+
+.fail {
+   color: $monza;
+   padding: 0 0 rem(16px);
+}

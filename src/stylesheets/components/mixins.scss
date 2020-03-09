@@ -1,0 +1,13 @@
+@mixin transition($transition) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content} 
+}
