@@ -1,42 +1,39 @@
 {
-  "name": "personal",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "dotenv": "^8.1.0",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "express-ejs-layouts": "^2.5.0",
-    "googleapis": "^43.0.0",
-    "nodemailer": "^5.1.1",
-    "sass-rem": "^2.0.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "autoprefixer": "^9.4.5",
-    "babel-loader": "^8.0.5",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "copy-webpack-plugin": "^4.6.0",
-    "css-loader": "^2.1.0",
-    "file-loader": "^3.0.1",
-    "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.13.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "postcss-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "url-loader": "^1.1.2",
-    "webpack": "^4.28.4",
-    "webpack-cli": "^3.2.1",
-    "yargs": "^12.0.5"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC"
+   "name": "personal",
+   "version": "1.0.0",
+   "description": "",
+   "main": "server.js",
+   "dependencies": {
+      "body-parser": "^1.18.3",
+      "dotenv": "^8.1.0",
+      "ejs": "^2.6.1",
+      "express": "^4.16.4",
+      "express-ejs-layouts": "^2.5.0",
+      "googleapis": "^43.0.0",
+      "nodemailer": "^5.1.1",
+      "sass-rem": "^2.0.1"
+   },
+   "devDependencies": {
+      "@babel/core": "^7.14.8",
+      "@babel/preset-env": "^7.14.8",
+      "autoprefixer": "^10.3.1",
+      "babel-loader": "^8.2.2",
+      "babel-plugin-transform-class-properties": "^6.24.1",
+      "copy-webpack-plugin": "^9.0.1",
+      "css-loader": "^6.2.0",
+      "file-loader": "^6.2.0",
+      "mini-css-extract-plugin": "^0.5.0",
+      "node-sass": "^6.0.1",
+      "optimize-css-assets-webpack-plugin": "^6.0.1",
+      "postcss-loader": "^6.1.1",
+      "sass-loader": "^12.1.0",
+      "style-loader": "^3.2.1",
+      "url-loader": "^4.1.1"
+   },
+   "scripts": {
+      "css": "node-sass src/stylesheets/style.scss -o dist",
+      "css:watch": "npm run css && node-sass src/stylesheets/*.scss -wo dist"
+   },
+   "author": "",
+   "license": "ISC"
 }
