@@ -1,0 +1,49 @@
+.intro {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin: 0 4rem;
+}
+
+.intro__heading {
+   color: $jade;
+   font-size: 5rem;
+   font-weight: 400;
+   margin: 0;
+}
+
+.intro__subheading {
+   color: $cararra;
+   font-size: 3rem;
+   font-weight: 400;
+   margin: 0;
+}
+
+.intro__content {
+   display: flex;
+   flex-direction: column;
+   margin: 3rem 0 0;
+   width: 75%;
+}
+
+.intro__text {
+   font-size: 1.2rem;
+   margin: 2rem 0 0;
+}
+
+.intro__footer {
+   display: flex;
+   justify-content: center;
+   margin: 3rem 0;
+   font-size: 2.5rem;
+   cursor: pointer;
+
+   .icon-arrow-down {
+      color: $jade;
+      font-size: 3rem;
+      cursor: pointer;
+      background: none;
+      border: 0;
+   }
+}

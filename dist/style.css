@@ -1,12 +1,17 @@
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("./fonts/Josefin_Sans/static/JosefinSans-Regular.ttf") format("truetype"); }
+
 body {
   margin: 0;
   padding: 0;
-  font-family: Varela Round,sans-serif; }
+  font-family: "Josefin Sans", sans-serif; }
 
 .preload * {
   transition: none !important; }
 
-[class*=" devicon-"], [class^=devicon-] {
+[class*=" devicon-"],
+[class^="devicon-"] {
   color: #09B96A;
   font-size: 1.5rem; }
 
@@ -30,8 +35,8 @@ h3 {
   text-decoration: underline;
   margin: 0; }
 
-input[type='text'] {
-  font-family: Varela Round,sans-serif;
+input[type="text"] {
+  font-family: "Josefin Sans", sans-serif;
   font-size: 1.125rem;
   padding: 0.3125rem;
   border-radius: 0.1875rem;
@@ -42,35 +47,35 @@ input[type='text'] {
   border: 0.125rem solid white;
   box-sizing: border-box; }
   @media (min-width: 48rem) {
-    input[type='text'] {
+    input[type="text"] {
       width: 50%; } }
-  input[type='text'] ::-webkit-input-placeholder {
-    font-family: Varela Round,sans-serif;
+  input[type="text"] ::-webkit-input-placeholder {
+    font-family: "Josefin Sans", sans-serif;
     font-size: 1.125rem;
     color: white; }
-  input[type='text'] :-moz-placeholder {
-    font-family: Varela Round,sans-serif;
+  input[type="text"] :-moz-placeholder {
+    font-family: "Josefin Sans", sans-serif;
     font-size: 1.125rem;
     color: white; }
-  input[type='text'] ::-moz-placeholder {
-    font-family: Varela Round,sans-serif;
+  input[type="text"] ::-moz-placeholder {
+    font-family: "Josefin Sans", sans-serif;
     font-size: 1.125rem;
     color: white; }
-  input[type='text'] :-ms-input-placeholder {
-    font-family: Varela Round,sans-serif;
+  input[type="text"] :-ms-input-placeholder {
+    font-family: "Josefin Sans", sans-serif;
     font-size: 1.125rem;
     color: white; }
-  input[type='text']:placeholder-shown {
-    font-family: Varela Round,sans-serif;
+  input[type="text"]:placeholder-shown {
+    font-family: "Josefin Sans", sans-serif;
     font-size: 1.125rem;
     color: white; }
-  input[type='text']:active, input[type='text']:focus {
+  input[type="text"]:active, input[type="text"]:focus {
     border-color: #09B96A;
     color: #09B96A;
     outline: none; }
 
 textarea {
-  font-family: Varela Round,sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 1.125rem;
   width: 100%;
   border-radius: 0.1875rem;
@@ -84,23 +89,23 @@ textarea {
     textarea {
       width: 50%; } }
   textarea ::-webkit-input-placeholder {
-    font-family: Varela Round,sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     font-size: 1.125rem;
     color: white; }
   textarea :-moz-placeholder {
-    font-family: Varela Round,sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     font-size: 1.125rem;
     color: white; }
   textarea ::-moz-placeholder {
-    font-family: Varela Round,sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     font-size: 1.125rem;
     color: white; }
   textarea :-ms-input-placeholder {
-    font-family: Varela Round,sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     font-size: 1.125rem;
     color: white; }
   textarea:placeholder-shown {
-    font-family: Varela Round,sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     font-size: 1.125rem;
     color: white; }
   textarea:active, textarea:focus {
@@ -108,7 +113,7 @@ textarea {
     color: #09B96A;
     outline: none; }
 
-input[type='submit'] {
+input[type="submit"] {
   padding: 0.625rem;
   border-radius: 0.1875rem;
   border: 0;
@@ -126,11 +131,11 @@ input[type='submit'] {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   margin: auto; }
-  input[type='submit']:hover {
+  input[type="submit"]:hover {
     border-color: #09B96A;
     color: #09B96A; }
   @media (min-width: 48rem) {
-    input[type='submit'] {
+    input[type="submit"] {
       display: inline-block; } }
 
 a {
@@ -186,7 +191,8 @@ a {
   position: fixed;
   width: 100%;
   z-index: 999;
-  border-bottom: 0.0625rem solid #09B96A; }
+  border-bottom: 0.0625rem solid #09B96A;
+  display: none; }
   @media (min-width: 48rem) {
     .header {
       padding: 1rem 0;
@@ -198,7 +204,6 @@ a {
     justify-content: space-between; } }
 
 .header__heading {
-  text-transform: uppercase;
   display: flex;
   justify-content: space-between; }
   @media (min-width: 48rem) {
@@ -258,7 +263,6 @@ a {
   height: 0;
   visibility: hidden;
   overflow: hidden;
-  text-transform: uppercase;
   position: relative;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -404,7 +408,8 @@ a {
 
 .wrapper {
   background: black;
-  position: relative; }
+  position: relative;
+  color: white; }
 
 .content {
   padding: 6rem 0 0; }
@@ -460,7 +465,7 @@ a {
   text-decoration: none; }
 
 .content__text {
-  font-family: "Varela Round", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   letter-spacing: 0.025rem;
   color: white;
   margin: 1rem 0; }
@@ -553,7 +558,7 @@ a {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   -webkit-font-smoothing: antialiased;
-  font-family: "Varela Round", sans-serif; }
+  font-family: "Josefin Sans", sans-serif; }
   .project-details.is-active {
     transform: translate(-50%, -50%) scale(1);
     z-index: 9999;
@@ -611,3 +616,45 @@ a {
 .fail {
   color: #C70027;
   padding: 0 0 1rem; }
+
+.intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 4rem; }
+
+.intro__heading {
+  color: #09B96A;
+  font-size: 5rem;
+  font-weight: 400;
+  margin: 0; }
+
+.intro__subheading {
+  color: #efeeea;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0; }
+
+.intro__content {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0 0;
+  width: 75%; }
+
+.intro__text {
+  font-size: 1.2rem;
+  margin: 2rem 0 0; }
+
+.intro__footer {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+  font-size: 2.5rem;
+  cursor: pointer; }
+  .intro__footer .icon-arrow-down {
+    color: #09B96A;
+    font-size: 3rem;
+    cursor: pointer;
+    background: none;
+    border: 0; }

@@ -7,6 +7,7 @@
 .wrapper {
    background: black;
    position: relative;
+   color: white;
 }
 
 .content {
@@ -77,7 +78,7 @@
 }
 
 .content__text {
-   font-family: "Varela Round", sans-serif;
+   font-family: "Josefin Sans", sans-serif;
    letter-spacing: rem(0.4px);
    color: white;
    margin: rem(16px) 0;
@@ -180,7 +181,7 @@
    visibility: hidden;
    @include transition(all 0.3s ease-in-out);
    -webkit-font-smoothing: antialiased;
-   font-family: "Varela Round", sans-serif;
+   font-family: "Josefin Sans", sans-serif;
 
    &.is-active {
       transform: translate(-50%, -50%) scale(1);
