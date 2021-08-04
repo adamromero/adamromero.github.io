@@ -1,3 +1,5 @@
+import "./stylesheets/style.scss";
+
 var app = (function () {
    var s;
    var app = {
