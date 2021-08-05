@@ -289,6 +289,12 @@ var app = function () {
 
       return false;
     },
+    openProject: function openProject(element) {
+      element.classList.add("is-active");
+      document.querySelector(".project-details").classList.add("is-active");
+      document.querySelector(".overlay").classList.add("is-active");
+      document.querySelector(".project-details__text").innerHTML = element.nextSibling.nextSibling.innerHTML;
+    },
     bindUIActions: function bindUIActions() {
       window.addEventListener("DOMContentLoaded", function () {
         document.body.classList.remove("preload");
@@ -311,7 +317,7 @@ var app = function () {
         this.classList.toggle("is-active");
         s.navTab.classList.toggle("is-active");
       });
-      var tabs = document.querySelectorAll(".header__navtab");
+      var tabs = document.querySelectorAll(".navtab");
 
       for (var i = 0; i < tabs.length; i++) {
         tabs[i].addEventListener("click", function () {
@@ -338,15 +344,23 @@ var app = function () {
 
       for (var _i = 0; _i < s.projectItems.length; _i++) {
         s.projectItems[_i].addEventListener("click", function () {
-          this.classList.add("is-active");
-          document.querySelector(".project-details").classList.add("is-active");
-          document.querySelector(".overlay").classList.add("is-active");
-          document.querySelector(".project-details__text").innerHTML = this.nextSibling.nextSibling.innerHTML;
+          app.openProject(this);
+        });
+
+        s.projectItems[_i].addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            app.openProject(this);
+          }
         });
       }
 
       document.getElementById("closeDetails").addEventListener("click", function () {
         app.closeProjectDetails();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (document.querySelector(".project-details").classList.contains("is-active") && e.key === "Escape") {
+          app.closeProjectDetails();
+        }
       });
       document.querySelector(".overlay").addEventListener("click", function () {
         app.closeProjectDetails();

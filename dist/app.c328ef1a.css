@@ -263,8 +263,7 @@ a:hover {
 }
 @media (min-width: 23.4375rem) {
   .header__title {
-    font-size: 1rem;
-    letter-spacing: 0.3125rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -304,7 +303,7 @@ a:hover {
 
 .header__name {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   -webkit-transition: all 0.3s;
@@ -312,7 +311,7 @@ a:hover {
 }
 @media (min-width: 23.4375rem) {
   .header__name {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -327,7 +326,7 @@ a:hover {
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  font-size: 0.875rem;
+  font-size: 1.375rem;
 }
 .header__nav.is-active {
   height: 9.0625rem;
@@ -341,15 +340,19 @@ a:hover {
     padding: 1rem 0 0;
     text-align: left;
     display: block;
-    font-size: 0.875rem;
+    font-size: 1.125rem;
   }
 }
 
 .header__navtab {
+  font-family: "Josefin Sans";
+  font-size: 1.125rem;
   color: #efeeea;
+  background: none;
   cursor: pointer;
   text-decoration: none;
   padding: 0.5rem;
+  border: 0;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   -webkit-transition: all 0.3s;
@@ -359,18 +362,12 @@ a:hover {
   .header__navtab {
     display: inline-block;
   }
-  .header__navtab:hover {
+  .header__navtab:hover, .header__navtab:focus, .header__navtab:active {
     color: #09B96A;
     -moz-transition: color 0.3s;
     -o-transition: color 0.3s;
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
-  }
-  .header__navtab.active {
-    color: #09B96A;
-    transform: scale(1.1);
-    border: 0.125rem solid #09B96A;
-    border-radius: 1.875rem;
   }
 }
 
@@ -476,7 +473,7 @@ a:hover {
 
 .footer__copy {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.125rem;
   padding: 1.25rem 0 0;
 }
 
@@ -508,16 +505,14 @@ a:hover {
 }
 
 .content__heading {
-  font-size: 1rem;
-  text-transform: uppercase;
+  font-size: 1.25rem;
   border-bottom: 0.25rem solid #09B96A;
-  letter-spacing: 0.3125rem;
   padding: 0 0 0.3125rem;
   color: white;
 }
 @media (min-width: 48rem) {
   .content__heading {
-    font-size: 1.125rem;
+    font-size: 1.75rem;
   }
 }
 
@@ -564,7 +559,6 @@ a:hover {
 
 .content__text {
   font-family: "Josefin Sans", sans-serif;
-  letter-spacing: 0.025rem;
   color: white;
   margin: 1rem 0;
 }
@@ -603,6 +597,7 @@ a:hover {
   cursor: pointer;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   text-align: center;
   color: white;
@@ -615,8 +610,10 @@ a:hover {
   text-transform: uppercase;
   font-weight: bold;
   background: rgba(0, 0, 0, 0.45);
+  border: 0;
+  width: 100%;
 }
-.content__overlay:hover, .content__overlay.is-active {
+.content__overlay:hover, .content__overlay:active, .content__overlay:focus, .content__overlay.is-active {
   background: rgba(9, 185, 106, 0.5);
 }
 
@@ -644,7 +641,7 @@ a:hover {
 .social-media-icon {
   color: white;
 }
-.social-media-icon:hover {
+.social-media-icon:hover, .social-media-icon:focus, .social-media-icon:active {
   color: #09B96A;
   -moz-transition: color 0.3s;
   -o-transition: color 0.3s;
@@ -698,23 +695,29 @@ a:hover {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.project-details__link:hover {
+.project-details__link:hover, .project-details__link:active, .project-details__link:focus {
   border-color: #09B96A;
   color: #09B96A;
 }
 
 .project-details__close {
+  font-family: "Josefin Sans";
   text-align: center;
   padding: 0.3125rem 0 0.625rem;
   cursor: pointer;
   width: 3.125rem;
   margin: auto;
+  background: none;
+  border: 0;
+  color: white;
+  display: block;
+  font-size: 1.125rem;
   -moz-transition: color 0.3s ease-in-out;
   -o-transition: color 0.3s ease-in-out;
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
-.project-details__close:hover {
+.project-details__close:hover, .project-details__close:active, .project-details__close:focus {
   color: #09B96A;
 }
 
@@ -796,6 +799,22 @@ a:hover {
   font-size: 1.1rem;
 }
 
+.intro__navtab {
+  color: #efeeea;
+  font-family: "Josefin Sans";
+  font-size: 1.125rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.intro__navtab:hover, .intro__navtab:focus, .intro__navtab:active {
+  color: #09B96A;
+  -moz-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
 .intro__heading {
   color: #09B96A;
   font-size: 5rem;
@@ -828,6 +847,13 @@ a:hover {
 .intro__social-link {
   color: white;
   font-size: 2.5rem;
+}
+.intro__social-link:hover, .intro__social-link:focus, .intro__social-link:active {
+  color: #09B96A;
+  -moz-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 .intro__text {

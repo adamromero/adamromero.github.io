@@ -131,6 +131,14 @@ var app = (function () {
          return false;
       },
 
+      openProject: function (element) {
+         element.classList.add("is-active");
+         document.querySelector(".project-details").classList.add("is-active");
+         document.querySelector(".overlay").classList.add("is-active");
+         document.querySelector(".project-details__text").innerHTML =
+            element.nextSibling.nextSibling.innerHTML;
+      },
+
       bindUIActions: function () {
          window.addEventListener("DOMContentLoaded", function () {
             document.body.classList.remove("preload");
@@ -164,7 +172,7 @@ var app = (function () {
             s.navTab.classList.toggle("is-active");
          });
 
-         let tabs = document.querySelectorAll(".header__navtab");
+         let tabs = document.querySelectorAll(".navtab");
          for (let i = 0; i < tabs.length; i++) {
             tabs[i].addEventListener("click", function () {
                let dataTab = this.getAttribute("data-tab");
@@ -193,13 +201,12 @@ var app = (function () {
 
          for (let i = 0; i < s.projectItems.length; i++) {
             s.projectItems[i].addEventListener("click", function () {
-               this.classList.add("is-active");
-               document
-                  .querySelector(".project-details")
-                  .classList.add("is-active");
-               document.querySelector(".overlay").classList.add("is-active");
-               document.querySelector(".project-details__text").innerHTML =
-                  this.nextSibling.nextSibling.innerHTML;
+               app.openProject(this);
+            });
+            s.projectItems[i].addEventListener("keydown", function (e) {
+               if (e.key === "Enter") {
+                  app.openProject(this);
+               }
             });
          }
 
@@ -208,6 +215,17 @@ var app = (function () {
             .addEventListener("click", function () {
                app.closeProjectDetails();
             });
+
+         document.addEventListener("keydown", function (e) {
+            if (
+               document
+                  .querySelector(".project-details")
+                  .classList.contains("is-active") &&
+               e.key === "Escape"
+            ) {
+               app.closeProjectDetails();
+            }
+         });
 
          document
             .querySelector(".overlay")

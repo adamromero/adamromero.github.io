@@ -14,9 +14,15 @@
          <div id="intro" data-content="intro" class="intro">
             <div class="intro__links">
                <nav class="intro__nav">
-                  <a href="#intro">Intro</a>
-                  <a href="#projects">Projects</a>
-                  <a href="#contact">Contact</a>
+                  <button data-tab="intro" class="intro__navtab navtab">
+                     Intro
+                  </button>
+                  <button data-tab="work" class="intro__navtab navtab">
+                     Projects
+                  </button>
+                  <button data-tab="contact" class="intro__navtab navtab">
+                     Contact
+                  </button>
                </nav>
             </div>
             <div class="intro__content">
@@ -71,8 +77,7 @@
                <button id="scrollDown" class="icon-arrow-down"></button>
             </div>
          </div>
-
-         <header class="header">
+         <header class="header hide">
             <div class="header__inner row">
                <div class="header__heading">
                   <div>
@@ -101,9 +106,15 @@
                </div>
                <i id="triggerMenu" class="header__down icon-chevron-down"></i>
                <div class="header__nav">
-                  <div data-tab="intro" class="header__navtab">Intro</div>
-                  <div data-tab="work" class="header__navtab">Projects</div>
-                  <div data-tab="contact" class="header__navtab">Contact</div>
+                  <button data-tab="intro" class="header__navtab navtab">
+                     Intro
+                  </button>
+                  <button data-tab="work" class="header__navtab navtab">
+                     Projects
+                  </button>
+                  <button data-tab="contact" class="header__navtab navtab">
+                     Contact
+                  </button>
                   <div class="navigation-line"></div>
                </div>
             </div>
@@ -119,7 +130,9 @@
                            src="/graphics/lls.png"
                            alt="LeftLane Sports"
                         />
-                        <div class="content__overlay">LeftLane Sports</div>
+                        <button class="content__overlay">
+                           LeftLane Sports
+                        </button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
@@ -159,7 +172,7 @@
                            src="/graphics/agu.png"
                            alt="ACTIVE GearUp"
                         />
-                        <div class="content__overlay">ACTIVE GearUp</div>
+                        <button class="content__overlay">ACTIVE GearUp</button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
@@ -191,7 +204,9 @@
                            src="/graphics/ows.png"
                            alt="Overton Workshop"
                         />
-                        <div class="content__overlay">Overton Workshop</div>
+                        <button class="content__overlay">
+                           Overton Workshop
+                        </button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
@@ -224,7 +239,7 @@
                            src="/graphics/aus.png"
                            alt="Auspient"
                         />
-                        <div class="content__overlay">Auspient</div>
+                        <button class="content__overlay">Auspient</button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
@@ -259,7 +274,9 @@
                            src="/graphics/carvings.png?033020"
                            alt="Nightmare Carvings"
                         />
-                        <div class="content__overlay">Nightmare Carvings</div>
+                        <button class="content__overlay">
+                           Nightmare Carvings
+                        </button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
@@ -305,7 +322,7 @@
                            src="/graphics/cant-sleep.png"
                            alt="Can't Sleep"
                         />
-                        <div class="content__overlay">Can't Sleep?</div>
+                        <button class="content__overlay">Can't Sleep?</button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
@@ -353,7 +370,7 @@
                            src="/graphics/chess.png"
                            alt="Chess"
                         />
-                        <div class="content__overlay">Chess</div>
+                        <button class="content__overlay">Chess</button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
@@ -395,7 +412,7 @@
                            src="/graphics/morse.png"
                            alt="Morse Code App"
                         />
-                        <div class="content__overlay">Morse Code</div>
+                        <button class="content__overlay">Morse Code</button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
@@ -434,7 +451,9 @@
                </div>
             </div>
             <div class="project-details">
-               <div id="closeDetails" class="project-details__close">Close</div>
+               <button id="closeDetails" class="project-details__close">
+                  Close
+               </button>
                <div class="project-details__text"></div>
             </div>
             <footer id="contact" class="footer" data-content="contact">

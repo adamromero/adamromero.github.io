@@ -11,9 +11,15 @@
          <div id="intro" data-content="intro" class="intro">
             <div class="intro__links">
                <nav class="intro__nav">
-                  <a href="#intro">Intro</a>
-                  <a href="#projects">Projects</a>
-                  <a href="#contact">Contact</a>
+                  <button data-tab="intro" class="intro__navtab navtab">
+                     Intro
+                  </button>
+                  <button data-tab="work" class="intro__navtab navtab">
+                     Projects
+                  </button>
+                  <button data-tab="contact" class="intro__navtab navtab">
+                     Contact
+                  </button>
                </nav>
             </div>
             <div class="intro__content">
@@ -54,8 +60,7 @@
                <button id="scrollDown" class="icon-arrow-down"></button>
             </div>
          </div>
-
-         <header class="header">
+         <header class="header hide">
             <div class="header__inner row">
                <div class="header__heading">
                   <div>
@@ -70,9 +75,15 @@
                </div>
                <i id="triggerMenu" class="header__down icon-chevron-down"></i>
                <div class="header__nav">
-                  <div data-tab="intro" class="header__navtab">Intro</div>
-                  <div data-tab="work" class="header__navtab">Projects</div>
-                  <div data-tab="contact" class="header__navtab">Contact</div>
+                  <button data-tab="intro" class="header__navtab navtab">
+                     Intro
+                  </button>
+                  <button data-tab="work" class="header__navtab navtab">
+                     Projects
+                  </button>
+                  <button data-tab="contact" class="header__navtab navtab">
+                     Contact
+                  </button>
                   <div class="navigation-line"></div>
                </div>
             </div>
@@ -84,7 +95,9 @@
                   <div class="content__grid-item">
                      <div class="content__link">
                         <img class="content__image" src="/lls.50a09cfd.png" alt="LeftLane Sports">
-                        <div class="content__overlay">LeftLane Sports</div>
+                        <button class="content__overlay">
+                           LeftLane Sports
+                        </button>
                         <div class="content__info hide">
                            <img class="content__image" src="/lls.50a09cfd.png" alt="LeftLane Sports">
                            <div class="content__row">
@@ -107,7 +120,7 @@
                   <div class="content__grid-item">
                      <div class="content__link">
                         <img class="content__image" src="/agu.7cd0dfc7.png" alt="ACTIVE GearUp">
-                        <div class="content__overlay">ACTIVE GearUp</div>
+                        <button class="content__overlay">ACTIVE GearUp</button>
                         <div class="content__info hide">
                            <img class="content__image" src="/agu.7cd0dfc7.png" alt="ACTIVE GearUp">
                            <div class="content__row">
@@ -127,7 +140,9 @@
                   <div class="content__grid-item">
                      <div class="content__link">
                         <img class="content__image" src="/ows.adfeaebc.png" alt="Overton Workshop">
-                        <div class="content__overlay">Overton Workshop</div>
+                        <button class="content__overlay">
+                           Overton Workshop
+                        </button>
                         <div class="content__info hide">
                            <img class="content__image" src="/ows.adfeaebc.png" alt="Overton Workshop">
                            <div class="content__row">
@@ -148,7 +163,7 @@
                   <div class="content__grid-item">
                      <div class="content__link">
                         <img class="content__image" src="/aus.2968c77b.png" alt="Auspient">
-                        <div class="content__overlay">Auspient</div>
+                        <button class="content__overlay">Auspient</button>
                         <div class="content__info hide">
                            <img class="content__image" src="/aus.2968c77b.png" alt="Auspient">
                            <div class="content__row">
@@ -171,7 +186,9 @@
                   <div class="content__grid-item">
                      <div class="content__link">
                         <img class="content__image" src="/carvings.09ba135b.png?033020" alt="Nightmare Carvings">
-                        <div class="content__overlay">Nightmare Carvings</div>
+                        <button class="content__overlay">
+                           Nightmare Carvings
+                        </button>
                         <div class="content__info hide">
                            <img class="content__image" src="/carvings.09ba135b.png?033020" alt="Nightmare Carvings">
                            <div class="content__row">
@@ -201,7 +218,7 @@
                   <div class="content__grid-item">
                      <div class="content__link">
                         <img class="content__image" src="/cant-sleep.771749e7.png" alt="Can't Sleep">
-                        <div class="content__overlay">Can't Sleep?</div>
+                        <button class="content__overlay">Can't Sleep?</button>
                         <div class="content__info hide">
                            <img class="content__image" src="/cant-sleep.771749e7.png" alt="Can't Sleep">
                            <div class="content__row">
@@ -233,7 +250,7 @@
                   <div class="content__grid-item">
                      <div class="content__link">
                         <img class="content__image" src="/chess.8dd0bea3.png" alt="Chess">
-                        <div class="content__overlay">Chess</div>
+                        <button class="content__overlay">Chess</button>
                         <div class="content__info hide">
                            <img class="content__image" src="/chess.8dd0bea3.png" alt="Chess">
                            <div class="content__row">
@@ -259,7 +276,7 @@
                   <div class="content__grid-item">
                      <div class="content__link">
                         <img class="content__image" src="/morse.0cb3f2fb.png" alt="Morse Code App">
-                        <div class="content__overlay">Morse Code</div>
+                        <button class="content__overlay">Morse Code</button>
                         <div class="content__info hide">
                            <img class="content__image" src="/morse.0cb3f2fb.png" alt="Morse Code App">
                            <div class="content__row">
@@ -286,7 +303,9 @@
                </div>
             </div>
             <div class="project-details">
-               <div id="closeDetails" class="project-details__close">Close</div>
+               <button id="closeDetails" class="project-details__close">
+                  Close
+               </button>
                <div class="project-details__text"></div>
             </div>
             <footer id="contact" class="footer" data-content="contact">

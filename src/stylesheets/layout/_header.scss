@@ -37,8 +37,7 @@
    font-weight: bold;
 
    @media (min-width: $small-mobile) {
-      font-size: rem(16px);
-      letter-spacing: rem(5px);
+      font-size: rem(24px);
    }
 }
 
@@ -74,11 +73,11 @@
 
 .header__name {
    margin: 0;
-   font-size: rem(20px);
+   font-size: rem(24px);
    @include transition(all 0.3s);
 
    @media (min-width: $small-mobile) {
-      font-size: rem(24px);
+      font-size: rem(32px);
    }
 }
 
@@ -90,7 +89,7 @@
    overflow: hidden;
    position: relative;
    @include transition(all 0.3s ease-in-out);
-   font-size: rem(14px);
+   font-size: rem(22px);
 
    &.is-active {
       height: rem(145px);
@@ -104,30 +103,29 @@
       padding: rem(16px) 0 0;
       text-align: left;
       display: block;
-      font-size: rem(14px);
+      font-size: rem(18px);
    }
 }
 
 .header__navtab {
+   font-family: "Josefin Sans";
+   font-size: rem(18px);
    color: $cararra;
+   background: none;
    cursor: pointer;
    text-decoration: none;
    padding: rem(8px);
+   border: 0;
    @include transition(all 0.3s);
 
    @media (min-width: $mobile) {
       display: inline-block;
 
-      &:hover {
+      &:hover,
+      &:focus,
+      &:active {
          color: $jade;
          @include transition(color 0.3s);
-      }
-
-      &.active {
-         color: $jade;
-         transform: scale(1.1);
-         border: rem(2px) solid $jade;
-         border-radius: rem(30px);
       }
    }
 }
