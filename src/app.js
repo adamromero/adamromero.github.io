@@ -6,6 +6,7 @@ var app = (function () {
       settings: {
          header: document.querySelector(".header"),
          navTab: document.querySelector(".header__nav"),
+         scrollDown: document.getElementById("scrollDown"),
          contentTop: document.querySelector(".content"),
          navLine: document.querySelector(".navigation-line"),
          triggerMenu: document.getElementById("triggerMenu"),
@@ -142,6 +143,20 @@ var app = (function () {
             let winScroll =
                document.body.scrollTop || document.documentElement.scrollTop;
             s.navLine.style.width = (winScroll / height) * 100 + "%";
+
+            if (
+               this.window.scrollY <
+               document.getElementById("scrollDown").offsetTop +
+                  document.getElementById("scrollDown").offsetHeight
+            ) {
+               s.header.classList.add("hide");
+            } else {
+               s.header.classList.remove("hide");
+            }
+         });
+
+         s.scrollDown.addEventListener("click", function () {
+            document.querySelector("[data-content='work']").scrollIntoView();
          });
 
          s.triggerMenu.addEventListener("click", function () {

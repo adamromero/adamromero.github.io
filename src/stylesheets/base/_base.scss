@@ -137,6 +137,7 @@ input[type="submit"] {
 a {
    color: white;
    transition: 0.2s color;
+   text-decoration: none;
 
    &:hover {
       color: $jade;

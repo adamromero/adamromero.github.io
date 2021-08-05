@@ -2,8 +2,21 @@
    height: 100vh;
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   justify-content: space-between;
    margin: 0 4rem;
+}
+
+.intro__links {
+   display: flex;
+   justify-content: flex-end;
+   margin: 2rem 0 0;
+}
+
+.intro__nav {
+   display: flex;
+   justify-content: space-between;
+   flex: 0 1 22rem;
+   font-size: 1.1rem;
 }
 
 .intro__heading {
@@ -17,19 +30,35 @@
    color: $cararra;
    font-size: 3rem;
    font-weight: 400;
-   margin: 0;
+   margin: 1rem 0 0;
 }
 
 .intro__content {
+   margin: 5rem 0 0;
+}
+
+.intro__social {
    display: flex;
-   flex-direction: column;
-   margin: 3rem 0 0;
-   width: 75%;
+   margin: 1.5rem 0 0;
+}
+
+.intro__social-links {
+   display: flex;
+   justify-content: space-between;
+   flex: 0 1 13rem;
+}
+
+.intro__social-link {
+   color: white;
+   font-size: 2.5rem;
 }
 
 .intro__text {
    font-size: 1.2rem;
-   margin: 2rem 0 0;
+
+   &:last-child {
+      margin: 3rem 0 0;
+   }
 }
 
 .intro__footer {
@@ -37,13 +66,13 @@
    justify-content: center;
    margin: 3rem 0;
    font-size: 2.5rem;
-   cursor: pointer;
 
    .icon-arrow-down {
       color: $jade;
       font-size: 3rem;
       cursor: pointer;
       background: none;
+      padding: 0;
       border: 0;
    }
 }

@@ -200,6 +200,7 @@ var app = function () {
     settings: {
       header: document.querySelector(".header"),
       navTab: document.querySelector(".header__nav"),
+      scrollDown: document.getElementById("scrollDown"),
       contentTop: document.querySelector(".content"),
       navLine: document.querySelector(".navigation-line"),
       triggerMenu: document.getElementById("triggerMenu"),
@@ -296,6 +297,15 @@ var app = function () {
         var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         s.navLine.style.width = winScroll / height * 100 + "%";
+
+        if (this.window.scrollY < document.getElementById("scrollDown").offsetTop + document.getElementById("scrollDown").offsetHeight) {
+          s.header.classList.add("hide");
+        } else {
+          s.header.classList.remove("hide");
+        }
+      });
+      s.scrollDown.addEventListener("click", function () {
+        document.querySelector("[data-content='work']").scrollIntoView();
       });
       s.triggerMenu.addEventListener("click", function () {
         this.classList.toggle("is-active");
@@ -375,7 +385,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42751" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42537" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

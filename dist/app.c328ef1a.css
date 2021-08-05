@@ -169,6 +169,7 @@ input[type=submit]:hover {
 a {
   color: white;
   transition: 0.2s color;
+  text-decoration: none;
 }
 a:hover {
   color: #09B96A;
@@ -229,7 +230,6 @@ a:hover {
   width: 100%;
   z-index: 999;
   border-bottom: 0.0625rem solid #09B96A;
-  display: none;
 }
 @media (min-width: 48rem) {
   .header {
@@ -503,7 +503,7 @@ a:hover {
 
 .content__panel {
   margin: auto;
-  padding-top: 1.25rem;
+  padding-top: 3.125rem;
   color: white;
 }
 
@@ -742,12 +742,58 @@ a:hover {
   padding: 0 0 1rem;
 }
 
+.hide {
+  display: none;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 25rem;
+  margin: 5rem 0;
+}
+
+.contact-form__input {
+  height: 1.8rem;
+}
+
+.contact-form__textarea {
+  background: white;
+  height: 8rem;
+  width: 100%;
+}
+
+.contact-form__margin {
+  margin: 0 0 1rem;
+}
+
+.contact-form__button {
+  font-family: "Josefin Sans";
+  font-size: 1.1rem;
+  max-width: 12rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
 .intro {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0 4rem;
+}
+
+.intro__links {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2rem 0 0;
+}
+
+.intro__nav {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 1 22rem;
+  font-size: 1.1rem;
 }
 
 .intro__heading {
@@ -761,19 +807,34 @@ a:hover {
   color: #efeeea;
   font-size: 3rem;
   font-weight: 400;
-  margin: 0;
+  margin: 1rem 0 0;
 }
 
 .intro__content {
+  margin: 5rem 0 0;
+}
+
+.intro__social {
   display: flex;
-  flex-direction: column;
-  margin: 3rem 0 0;
-  width: 75%;
+  margin: 1.5rem 0 0;
+}
+
+.intro__social-links {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 1 13rem;
+}
+
+.intro__social-link {
+  color: white;
+  font-size: 2.5rem;
 }
 
 .intro__text {
   font-size: 1.2rem;
-  margin: 2rem 0 0;
+}
+.intro__text:last-child {
+  margin: 3rem 0 0;
 }
 
 .intro__footer {
@@ -781,13 +842,13 @@ a:hover {
   justify-content: center;
   margin: 3rem 0;
   font-size: 2.5rem;
-  cursor: pointer;
 }
 .intro__footer .icon-arrow-down {
   color: #09B96A;
   font-size: 3rem;
   cursor: pointer;
   background: none;
+  padding: 0;
   border: 0;
 }
 

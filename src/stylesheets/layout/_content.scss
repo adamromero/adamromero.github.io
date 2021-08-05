@@ -20,7 +20,7 @@
 
 .content__panel {
    margin: auto;
-   padding-top: rem(20px);
+   padding-top: rem(50px);
    color: white;
 }
 
@@ -246,4 +246,37 @@
 .fail {
    color: $monza;
    padding: 0 0 rem(16px);
+}
+
+.hide {
+   display: none;
+}
+
+.contact-form {
+   display: flex;
+   flex-direction: column;
+   max-width: 25rem;
+   margin: 5rem 0;
+}
+
+.contact-form__input {
+   height: 1.8rem;
+}
+
+.contact-form__textarea {
+   background: white;
+   height: 8rem;
+   width: 100%;
+}
+
+.contact-form__margin {
+   margin: 0 0 1rem;
+}
+
+.contact-form__button {
+   font-family: "Josefin Sans";
+   font-size: 1.1rem;
+   max-width: 12rem;
+   padding: 1rem;
+   cursor: pointer;
 }
