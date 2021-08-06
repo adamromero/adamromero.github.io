@@ -327,6 +327,9 @@ a:hover {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   font-size: 1.375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .header__nav.is-active {
   height: 9.0625rem;
@@ -346,7 +349,7 @@ a:hover {
 
 .header__navtab {
   font-family: "Josefin Sans";
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: #efeeea;
   background: none;
   cursor: pointer;
@@ -774,8 +777,14 @@ a:hover {
   font-family: "Josefin Sans";
   font-size: 1.1rem;
   max-width: 12rem;
-  padding: 1rem;
+  padding: 0.8rem;
   cursor: pointer;
+  border: 0;
+  background: #09B96A;
+  transition: background 0.2s ease-in-out;
+}
+.contact-form__button:hover, .contact-form__button:focus, .contact-form__button:active {
+  background: #4bf6a9;
 }
 
 .intro {
@@ -783,7 +792,12 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 4rem;
+  margin: 0 2rem;
+}
+@media (min-width: 48rem) {
+  .intro {
+    margin: 0 4rem;
+  }
 }
 
 .intro__links {
@@ -817,20 +831,35 @@ a:hover {
 
 .intro__heading {
   color: #09B96A;
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 400;
   margin: 0;
+}
+@media (min-width: 48rem) {
+  .intro__heading {
+    font-size: 5rem;
+  }
 }
 
 .intro__subheading {
   color: #efeeea;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 400;
   margin: 1rem 0 0;
 }
+@media (min-width: 48rem) {
+  .intro__subheading {
+    font-size: 3rem;
+  }
+}
 
 .intro__content {
-  margin: 5rem 0 0;
+  margin: 2rem 0 0;
+}
+@media (min-width: 48rem) {
+  .intro__content {
+    margin: 5rem 0 0;
+  }
 }
 
 .intro__social {
@@ -858,6 +887,7 @@ a:hover {
 
 .intro__text {
   font-size: 1.2rem;
+  line-height: 1.5;
 }
 .intro__text:last-child {
   margin: 3rem 0 0;
@@ -866,8 +896,13 @@ a:hover {
 .intro__footer {
   display: flex;
   justify-content: center;
-  margin: 3rem 0;
+  margin: 1rem 0;
   font-size: 2.5rem;
+}
+@media (min-width: 48rem) {
+  .intro__footer {
+    margin: 3rem 0;
+  }
 }
 .intro__footer .icon-arrow-down {
   color: #09B96A;

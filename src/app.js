@@ -164,7 +164,10 @@ var app = (function () {
          });
 
          s.scrollDown.addEventListener("click", function () {
-            document.querySelector("[data-content='work']").scrollIntoView();
+            window.scrollTo({
+               top: document.querySelector("[data-content='work']").offsetTop,
+               behavior: "smooth",
+            });
          });
 
          s.triggerMenu.addEventListener("click", function () {
@@ -189,7 +192,7 @@ var app = (function () {
                let offsetPosition = elementPosition - offset;
 
                if (window.innerWidth >= s.mobileBreakPoint) {
-                  offsetPosition = elementPosition - s.header.offsetHeight;
+                  offsetPosition = elementPosition;
                }
 
                window.scrollTo({

@@ -3,7 +3,11 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   margin: 0 4rem;
+   margin: 0 2rem;
+
+   @media (min-width: $mobile) {
+      margin: 0 4rem;
+   }
 }
 
 .intro__links {
@@ -37,20 +41,32 @@
 
 .intro__heading {
    color: $jade;
-   font-size: 5rem;
+   font-size: 3rem;
    font-weight: 400;
    margin: 0;
+
+   @media (min-width: $mobile) {
+      font-size: 5rem;
+   }
 }
 
 .intro__subheading {
    color: $cararra;
-   font-size: 3rem;
+   font-size: 2rem;
    font-weight: 400;
    margin: 1rem 0 0;
+
+   @media (min-width: $mobile) {
+      font-size: 3rem;
+   }
 }
 
 .intro__content {
-   margin: 5rem 0 0;
+   margin: 2rem 0 0;
+
+   @media (min-width: $mobile) {
+      margin: 5rem 0 0;
+   }
 }
 
 .intro__social {
@@ -78,6 +94,7 @@
 
 .intro__text {
    font-size: 1.2rem;
+   line-height: 1.5;
 
    &:last-child {
       margin: 3rem 0 0;
@@ -87,8 +104,12 @@
 .intro__footer {
    display: flex;
    justify-content: center;
-   margin: 3rem 0;
+   margin: 1rem 0;
    font-size: 2.5rem;
+
+   @media (min-width: $mobile) {
+      margin: 3rem 0;
+   }
 
    .icon-arrow-down {
       color: $jade;

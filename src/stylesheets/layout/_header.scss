@@ -90,6 +90,9 @@
    position: relative;
    @include transition(all 0.3s ease-in-out);
    font-size: rem(22px);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
 
    &.is-active {
       height: rem(145px);
@@ -109,7 +112,7 @@
 
 .header__navtab {
    font-family: "Josefin Sans";
-   font-size: rem(18px);
+   font-size: rem(20px);
    color: $cararra;
    background: none;
    cursor: pointer;

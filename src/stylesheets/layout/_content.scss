@@ -291,6 +291,15 @@
    font-family: "Josefin Sans";
    font-size: 1.1rem;
    max-width: 12rem;
-   padding: 1rem;
+   padding: 0.8rem;
    cursor: pointer;
+   border: 0;
+   background: $jade;
+   transition: background 0.2s ease-in-out;
+
+   &:hover,
+   &:focus,
+   &:active {
+      background: lighten($jade, 25%);
+   }
 }
