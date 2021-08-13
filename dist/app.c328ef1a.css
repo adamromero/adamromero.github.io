@@ -493,6 +493,7 @@ a:hover {
 }
 
 .content {
+  margin: 6rem 0 0;
   padding: 6rem 0 0;
 }
 @media (min-width: 48rem) {
@@ -788,7 +789,7 @@ a:hover {
 }
 
 .intro {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -831,13 +832,13 @@ a:hover {
 
 .intro__heading {
   color: #09B96A;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 400;
   margin: 0;
 }
 @media (min-width: 48rem) {
   .intro__heading {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
 
@@ -849,7 +850,7 @@ a:hover {
 }
 @media (min-width: 48rem) {
   .intro__subheading {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -858,7 +859,7 @@ a:hover {
 }
 @media (min-width: 48rem) {
   .intro__content {
-    margin: 5rem 0 0;
+    margin: 5% 0 0;
   }
 }
 
