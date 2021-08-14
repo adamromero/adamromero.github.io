@@ -298,6 +298,15 @@
    background: $jade;
    transition: background 0.2s ease-in-out;
 
+   &:disabled {
+      cursor: not-allowed;
+      background: #7bbfa1;
+
+      &:hover {
+         background: #7bbfa1;
+      }
+   }
+
    &:hover,
    &:focus,
    &:active {

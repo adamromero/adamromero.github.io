@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../fonts/Josefin_Sans/static/JosefinSans-Regular.ttf":[["JosefinSans-Regular.2749132e.ttf","fonts/Josefin_Sans/static/JosefinSans-Regular.ttf"],"fonts/Josefin_Sans/static/JosefinSans-Regular.ttf"],"./../icomoon/fonts/icomoon.eot":[["icomoon.5a1ed617.eot","icomoon/fonts/icomoon.eot"],"icomoon/fonts/icomoon.eot"],"./../icomoon/fonts/icomoon.ttf":[["icomoon.0e5398f3.ttf","icomoon/fonts/icomoon.ttf"],"icomoon/fonts/icomoon.ttf"],"./../icomoon/fonts/icomoon.woff":[["icomoon.ca850f60.woff","icomoon/fonts/icomoon.woff"],"icomoon/fonts/icomoon.woff"],"./../icomoon/fonts/icomoon.svg":[["icomoon.e519d691.svg","icomoon/fonts/icomoon.svg"],"icomoon/fonts/icomoon.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"app.js":[function(require,module,exports) {
+},{"./..\\fonts\\Josefin_Sans\\static\\JosefinSans-Regular.ttf":[["JosefinSans-Regular.2749132e.ttf","fonts/Josefin_Sans/static/JosefinSans-Regular.ttf"],"fonts/Josefin_Sans/static/JosefinSans-Regular.ttf"],"./..\\icomoon\\fonts\\icomoon.eot":[["icomoon.5a1ed617.eot","icomoon/fonts/icomoon.eot"],"icomoon/fonts/icomoon.eot"],"./..\\icomoon\\fonts\\icomoon.ttf":[["icomoon.0e5398f3.ttf","icomoon/fonts/icomoon.ttf"],"icomoon/fonts/icomoon.ttf"],"./..\\icomoon\\fonts\\icomoon.woff":[["icomoon.ca850f60.woff","icomoon/fonts/icomoon.woff"],"icomoon/fonts/icomoon.woff"],"./..\\icomoon\\fonts\\icomoon.svg":[["icomoon.e519d691.svg","icomoon/fonts/icomoon.svg"],"icomoon/fonts/icomoon.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"app.js":[function(require,module,exports) {
 "use strict";
 
 require("./stylesheets/style.scss");
@@ -206,37 +206,26 @@ var app = function () {
       triggerMenu: document.getElementById("triggerMenu"),
       projectItems: document.querySelectorAll(".content__overlay"),
       year: document.getElementById("year"),
+      form: document.getElementById('contactForm'),
       mobileBreakPoint: 768,
       scrollAboveIntro: false,
       scrollBelowIntro: false,
       previousScrollPosition: 0
     },
-    init: function init() {
+    init: function () {
       s = this.settings;
       s.year.innerHTML = new Date().getFullYear();
       this.bindUIActions();
     },
-    closeProjectDetails: function closeProjectDetails() {
+    closeProjectDetails: function () {
       document.querySelector(".project-details").classList.remove("is-active");
       document.querySelector(".overlay").classList.remove("is-active");
       document.querySelector(".content__overlay.is-active").classList.remove("is-active");
     },
-    sendEmailByAJAX: function sendEmailByAJAX() {
-      var xhttp = new XMLHttpRequest();
-
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("emailMessage").innerHTML = this.responseText;
-        }
-      };
-
-      xhttp.open("POST", "/send", true);
-      xhttp.send();
-    },
-    validateContactForm: function validateContactForm() {
-      var inputName = document.querySelector(".input-name"),
-          inputEmail = document.querySelector(".input-email"),
-          inputMessage = document.querySelector(".input-message"),
+    validateContactForm: function () {
+      let inputName = document.getElementById("name"),
+          inputEmail = document.getElementById("email"),
+          inputMessage = document.getElementById("message"),
           validName = false,
           validEmail = false,
           validMessage = false;
@@ -258,15 +247,16 @@ var app = function () {
           app.handleSubmitButtonAccess(validName, validEmail, validMessage);
         }
       });
+      s.form.addEventListener("submit", app.handleContactFormSubmission);
     },
-    handleSubmitButtonAccess: function handleSubmitButtonAccess(validName, validEmail, validMessage) {
+    handleSubmitButtonAccess: function (validName, validEmail, validMessage) {
       if (validName && validEmail && validMessage) {
         document.getElementById("submitButton").removeAttribute("disabled");
       } else {
         document.getElementById("submitButton").setAttribute("disabled", "disabled");
       }
     },
-    validInput: function validInput(valid, input) {
+    validInput: function (valid, input) {
       if (!valid(input.value)) {
         //this.displayErrorMark(input);
         return false;
@@ -275,13 +265,13 @@ var app = function () {
 
       return true;
     },
-    validName: function validName(name) {
+    validName: function (name) {
       return name !== "";
     },
-    validEmail: function validEmail(email) {
+    validEmail: function (email) {
       return /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i.test(email);
     },
-    validMessage: function validMessage(message) {
+    validMessage: function (message) {
       if (message.value !== "" && message.value.length >= 10 && message.value.length <= 400) {
         //message.removeClass('error').addClass('success');
         //message.next('.contact-form__error').addClass('hide');
@@ -292,19 +282,38 @@ var app = function () {
 
       return false;
     },
-    openProject: function openProject(element) {
+    handleContactFormSubmission: async function (event) {
+      event.preventDefault();
+      var status = document.getElementById("formStatus");
+      console.log(event.target);
+      var data = new FormData(event.target);
+      console.log(data);
+      fetch(event.target.action, {
+        method: s.form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        status.innerHTML = "Thanks for your submission!";
+        s.form.reset();
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form.";
+      });
+    },
+    openProject: function (element) {
       element.classList.add("is-active");
       document.querySelector(".project-details").classList.add("is-active");
       document.querySelector(".overlay").classList.add("is-active");
       document.querySelector(".project-details__text").innerHTML = element.nextSibling.nextSibling.innerHTML;
     },
-    bindUIActions: function bindUIActions() {
+    bindUIActions: function () {
       window.addEventListener("DOMContentLoaded", function () {
         document.body.classList.remove("preload");
       });
       window.addEventListener("scroll", function (e) {
-        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         s.navLine.style.width = winScroll / height * 100 + "%";
 
         if (this.window.scrollY < document.getElementById("scrollDown").offsetTop + document.getElementById("scrollDown").offsetHeight) {
@@ -313,7 +322,7 @@ var app = function () {
           s.header.classList.remove("hide");
         }
 
-        var currentScrollPosition = this.window.scrollY + this.window.outerHeight;
+        let currentScrollPosition = this.window.scrollY + this.window.outerHeight;
 
         if (currentScrollPosition > s.previousScrollPosition && currentScrollPosition > document.getElementById('intro').offsetHeight && currentScrollPosition < document.querySelector('[data-content="work"]').offsetTop) {
           if (!s.scrollAboveIntro) {
@@ -323,6 +332,7 @@ var app = function () {
             });
             s.scrollAboveIntro = true;
             s.scrollBelowIntro = false;
+            console.log('scroll down');
           }
         } else if (currentScrollPosition < s.previousScrollPosition && this.window.scrollY < document.querySelector('[data-content="work"]').offsetTop && this.window.scrollY > document.getElementById('intro').offsetHeight) {
           if (!s.scrollBelowIntro) {
@@ -332,6 +342,7 @@ var app = function () {
             });
             s.scrollBelowIntro = true;
             s.scrollAboveIntro = false;
+            console.log('scroll up');
           }
         }
 
@@ -347,19 +358,19 @@ var app = function () {
         this.classList.toggle("is-active");
         s.navTab.classList.toggle("is-active");
       });
-      var tabs = document.querySelectorAll(".navtab");
+      let tabs = document.querySelectorAll(".navtab");
 
-      for (var i = 0; i < tabs.length; i++) {
+      for (let i = 0; i < tabs.length; i++) {
         tabs[i].addEventListener("click", function () {
-          var dataTab = this.getAttribute("data-tab");
-          var element = document.querySelector("[data-content='" + dataTab + "']");
-          var offset = s.header.offsetHeight - s.navTab.offsetHeight;
+          let dataTab = this.getAttribute("data-tab");
+          let element = document.querySelector("[data-content='" + dataTab + "']");
+          let offset = s.header.offsetHeight - s.navTab.offsetHeight;
           s.navTab.classList.remove("is-active");
           s.triggerMenu.classList.remove("is-active");
-          var bodyRect = document.body.getBoundingClientRect().top;
-          var elementRect = element.getBoundingClientRect().top;
-          var elementPosition = elementRect - bodyRect;
-          var offsetPosition = elementPosition - offset;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = element.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          let offsetPosition = elementPosition - offset;
 
           if (window.innerWidth >= s.mobileBreakPoint) {
             offsetPosition = elementPosition;
@@ -372,12 +383,11 @@ var app = function () {
         });
       }
 
-      for (var _i = 0; _i < s.projectItems.length; _i++) {
-        s.projectItems[_i].addEventListener("click", function () {
+      for (let i = 0; i < s.projectItems.length; i++) {
+        s.projectItems[i].addEventListener("click", function () {
           app.openProject(this);
         });
-
-        s.projectItems[_i].addEventListener("keydown", function (e) {
+        s.projectItems[i].addEventListener("keydown", function (e) {
           if (e.key === "Enter") {
             app.openProject(this);
           }
@@ -394,7 +404,8 @@ var app = function () {
       });
       document.querySelector(".overlay").addEventListener("click", function () {
         app.closeProjectDetails();
-      }); //app.validateContactForm();
+      });
+      app.validateContactForm();
     }
   };
   return app;
@@ -429,7 +440,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53803" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55936" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

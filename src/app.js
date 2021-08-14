@@ -12,6 +12,7 @@ var app = (function () {
          triggerMenu: document.getElementById("triggerMenu"),
          projectItems: document.querySelectorAll(".content__overlay"),
          year: document.getElementById("year"),
+         form: document.getElementById('contactForm'),
          mobileBreakPoint: 768,
          scrollAboveIntro: false,
          scrollBelowIntro: false,
@@ -34,23 +35,10 @@ var app = (function () {
             .classList.remove("is-active");
       },
 
-      sendEmailByAJAX: function () {
-         const xhttp = new XMLHttpRequest();
-         xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-               document.getElementById(
-                  "emailMessage"
-               ).innerHTML = this.responseText;
-            }
-         };
-         xhttp.open("POST", "/send", true);
-         xhttp.send();
-      },
-
       validateContactForm: function () {
-         let inputName = document.querySelector(".input-name"),
-            inputEmail = document.querySelector(".input-email"),
-            inputMessage = document.querySelector(".input-message"),
+         let inputName = document.getElementById("name"),
+            inputEmail = document.getElementById("email"),
+            inputMessage = document.getElementById("message"),
             validName = false,
             validEmail = false,
             validMessage = false;
@@ -87,6 +75,8 @@ var app = (function () {
                );
             }
          });
+
+         s.form.addEventListener("submit", app.handleContactFormSubmission);
       },
 
       handleSubmitButtonAccess: function (validName, validEmail, validMessage) {
@@ -135,6 +125,29 @@ var app = (function () {
          return false;
       },
 
+      handleContactFormSubmission: async function (event) {
+         event.preventDefault();
+         var status = document.getElementById("formStatus");
+         console.log(event.target);
+         var data = new FormData(event.target);
+         console.log(data);
+
+
+         fetch(event.target.action, {
+            method: s.form.method,
+            body: data,
+            headers: {
+               'Accept': 'application/json'
+            }
+         }).then(response => {
+            status.innerHTML = "Thanks for your submission!";
+            s.form.reset()
+         }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form."
+         });
+
+      },
+
       openProject: function (element) {
          element.classList.add("is-active");
          document.querySelector(".project-details").classList.add("is-active");
@@ -165,10 +178,10 @@ var app = (function () {
             } else {
                s.header.classList.remove("hide");
             }
-            
+
             let currentScrollPosition = this.window.scrollY + this.window.outerHeight;
-            if (currentScrollPosition > s.previousScrollPosition && 
-               currentScrollPosition > document.getElementById('intro').offsetHeight && 
+            if (currentScrollPosition > s.previousScrollPosition &&
+               currentScrollPosition > document.getElementById('intro').offsetHeight &&
                currentScrollPosition < document.querySelector('[data-content="work"]').offsetTop) {
                if (!s.scrollAboveIntro) {
                   window.scrollTo({
@@ -178,9 +191,10 @@ var app = (function () {
                   });
                   s.scrollAboveIntro = true;
                   s.scrollBelowIntro = false;
+                  console.log('scroll down');
                }
-            } else if (currentScrollPosition < s.previousScrollPosition && 
-               this.window.scrollY < document.querySelector('[data-content="work"]').offsetTop && 
+            } else if (currentScrollPosition < s.previousScrollPosition &&
+               this.window.scrollY < document.querySelector('[data-content="work"]').offsetTop &&
                this.window.scrollY > document.getElementById('intro').offsetHeight) {
                if (!s.scrollBelowIntro) {
                   window.scrollTo({
@@ -189,6 +203,7 @@ var app = (function () {
                   });
                   s.scrollBelowIntro = true;
                   s.scrollAboveIntro = false;
+                  console.log('scroll up');
                }
             }
             s.previousScrollPosition = currentScrollPosition;
@@ -267,7 +282,7 @@ var app = (function () {
                app.closeProjectDetails();
             });
 
-         //app.validateContactForm();
+         app.validateContactForm();
       },
    };
 
