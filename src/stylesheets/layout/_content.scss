@@ -108,6 +108,7 @@
 }
 
 .content__overlay {
+   font-family: "Josefin Sans", sans-serif;
    position: absolute;
    top: 0;
    left: 0;
@@ -121,9 +122,8 @@
    text-align: center;
    color: white;
    text-shadow: 3px 3px 5px black;
-   font-size: rem(16px);
+   font-size: rem(20px);
    @include transition(all 0.3s ease-in-out);
-   text-transform: uppercase;
    font-weight: bold;
    background: rgba(0, 0, 0, 0.45);
    border: 0;
