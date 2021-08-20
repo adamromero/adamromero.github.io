@@ -132,8 +132,6 @@ textarea:placeholder-shown {
   color: white;
 }
 textarea:active, textarea:focus {
-  border-color: #09B96A;
-  color: #09B96A;
   outline: none;
 }
 
@@ -759,15 +757,24 @@ a:hover {
   max-width: 25rem;
   margin: 5rem 0;
 }
-
-.contact-form__input {
+.contact-form .contact-form__input,
+.contact-form .contact-form__input:focus,
+.contact-form .contact-form__input:active,
+.contact-form .contact-form__input:hover {
+  font-family: "Josefin Sans";
+  font-size: 1rem;
   height: 1.8rem;
+  -webkit-box-shadow: none;
+  -webkit-text-fill-color: black;
+  border: 0;
 }
 
 .contact-form__textarea {
+  color: black;
   background: white;
   height: 8rem;
   width: 100%;
+  font-size: 1rem;
 }
 
 .contact-form__margin {

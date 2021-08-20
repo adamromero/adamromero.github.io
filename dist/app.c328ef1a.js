@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\fonts\\Josefin_Sans\\static\\JosefinSans-Regular.ttf":[["JosefinSans-Regular.2749132e.ttf","fonts/Josefin_Sans/static/JosefinSans-Regular.ttf"],"fonts/Josefin_Sans/static/JosefinSans-Regular.ttf"],"./..\\icomoon\\fonts\\icomoon.eot":[["icomoon.5a1ed617.eot","icomoon/fonts/icomoon.eot"],"icomoon/fonts/icomoon.eot"],"./..\\icomoon\\fonts\\icomoon.ttf":[["icomoon.0e5398f3.ttf","icomoon/fonts/icomoon.ttf"],"icomoon/fonts/icomoon.ttf"],"./..\\icomoon\\fonts\\icomoon.woff":[["icomoon.ca850f60.woff","icomoon/fonts/icomoon.woff"],"icomoon/fonts/icomoon.woff"],"./..\\icomoon\\fonts\\icomoon.svg":[["icomoon.e519d691.svg","icomoon/fonts/icomoon.svg"],"icomoon/fonts/icomoon.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"app.js":[function(require,module,exports) {
+},{"./../fonts/Josefin_Sans/static/JosefinSans-Regular.ttf":[["JosefinSans-Regular.2749132e.ttf","fonts/Josefin_Sans/static/JosefinSans-Regular.ttf"],"fonts/Josefin_Sans/static/JosefinSans-Regular.ttf"],"./../icomoon/fonts/icomoon.eot":[["icomoon.5a1ed617.eot","icomoon/fonts/icomoon.eot"],"icomoon/fonts/icomoon.eot"],"./../icomoon/fonts/icomoon.ttf":[["icomoon.0e5398f3.ttf","icomoon/fonts/icomoon.ttf"],"icomoon/fonts/icomoon.ttf"],"./../icomoon/fonts/icomoon.woff":[["icomoon.ca850f60.woff","icomoon/fonts/icomoon.woff"],"icomoon/fonts/icomoon.woff"],"./../icomoon/fonts/icomoon.svg":[["icomoon.e519d691.svg","icomoon/fonts/icomoon.svg"],"icomoon/fonts/icomoon.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"app.js":[function(require,module,exports) {
 "use strict";
 
 require("./stylesheets/style.scss");
@@ -440,7 +440,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55936" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64534" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
