@@ -206,21 +206,17 @@ var app = function () {
       triggerMenu: document.getElementById("triggerMenu"),
       projectItems: document.querySelectorAll(".content__overlay"),
       year: document.getElementById("year"),
-      form: document.getElementById('contactForm'),
+      form: document.getElementById("contactForm"),
       mobileBreakPoint: 768,
       scrollAboveIntro: false,
       scrollBelowIntro: false,
-      previousScrollPosition: 0
+      previousScrollPosition: 0,
+      previousActiveElement: null
     },
     init: function () {
       s = this.settings;
       s.year.innerHTML = new Date().getFullYear();
       this.bindUIActions();
-    },
-    closeProjectDetails: function () {
-      document.querySelector(".project-details").classList.remove("is-active");
-      document.querySelector(".overlay").classList.remove("is-active");
-      document.querySelector(".content__overlay.is-active").classList.remove("is-active");
     },
     validateContactForm: function () {
       let inputName = document.getElementById("name"),
@@ -285,14 +281,12 @@ var app = function () {
     handleContactFormSubmission: async function (event) {
       event.preventDefault();
       var status = document.getElementById("formStatus");
-      console.log(event.target);
       var data = new FormData(event.target);
-      console.log(data);
       fetch(event.target.action, {
         method: s.form.method,
         body: data,
         headers: {
-          'Accept': 'application/json'
+          Accept: "application/json"
         }
       }).then(response => {
         status.innerHTML = "Thanks for your submission!";
@@ -301,11 +295,40 @@ var app = function () {
         status.innerHTML = "Oops! There was a problem submitting your form.";
       });
     },
+    closeProjectDetails: function () {
+      document.querySelector(".project-details").classList.remove("is-active");
+      document.querySelector(".overlay").classList.remove("is-active");
+      document.querySelector(".content__overlay.is-active").classList.remove("is-active");
+      s.previousActiveElement.focus();
+    },
     openProject: function (element) {
       element.classList.add("is-active");
       document.querySelector(".project-details").classList.add("is-active");
       document.querySelector(".overlay").classList.add("is-active");
       document.querySelector(".project-details__text").innerHTML = element.nextSibling.nextSibling.innerHTML;
+      setTimeout(function () {
+        app.trapFocusInModal();
+      }, 0);
+    },
+    trapFocusInModal: function () {
+      const indexForLastLink = document.querySelectorAll(".project-details.is-active .project-details__link").length;
+      const firstFocusableEl = document.getElementById("closeDetails"),
+            lastFocusableEl = document.querySelectorAll(".project-details.is-active .project-details__link")[indexForLastLink - 1];
+      firstFocusableEl.focus();
+
+      function loopFocus(e) {
+        if (e.key === "Tab" || e.keyCode === 9) {
+          if (e.shiftKey && document.activeElement === firstFocusableEl) {
+            e.preventDefault();
+            lastFocusableEl.focus();
+          } else if (!e.shiftKey && document.activeElement === lastFocusableEl) {
+            e.preventDefault();
+            firstFocusableEl.focus();
+          }
+        }
+      }
+
+      document.querySelector(".project-details").addEventListener("keydown", loopFocus);
     },
     bindUIActions: function () {
       window.addEventListener("DOMContentLoaded", function () {
@@ -324,7 +347,7 @@ var app = function () {
 
         let currentScrollPosition = this.window.scrollY + this.window.outerHeight;
 
-        if (currentScrollPosition > s.previousScrollPosition && currentScrollPosition > document.getElementById('intro').offsetHeight && currentScrollPosition < document.querySelector('[data-content="work"]').offsetTop) {
+        if (currentScrollPosition > s.previousScrollPosition && currentScrollPosition > document.getElementById("intro").offsetHeight && currentScrollPosition < document.querySelector('[data-content="work"]').offsetTop) {
           if (!s.scrollAboveIntro) {
             window.scrollTo({
               top: document.querySelector("[data-content='work']").offsetTop,
@@ -332,9 +355,8 @@ var app = function () {
             });
             s.scrollAboveIntro = true;
             s.scrollBelowIntro = false;
-            console.log('scroll down');
           }
-        } else if (currentScrollPosition < s.previousScrollPosition && this.window.scrollY < document.querySelector('[data-content="work"]').offsetTop && this.window.scrollY > document.getElementById('intro').offsetHeight) {
+        } else if (currentScrollPosition < s.previousScrollPosition && this.window.scrollY < document.querySelector('[data-content="work"]').offsetTop && this.window.scrollY > document.getElementById("intro").offsetHeight) {
           if (!s.scrollBelowIntro) {
             window.scrollTo({
               top: document.querySelector("#intro"),
@@ -342,7 +364,6 @@ var app = function () {
             });
             s.scrollBelowIntro = true;
             s.scrollAboveIntro = false;
-            console.log('scroll up');
           }
         }
 
@@ -383,15 +404,16 @@ var app = function () {
         });
       }
 
-      for (let i = 0; i < s.projectItems.length; i++) {
-        s.projectItems[i].addEventListener("click", function () {
+      function triggerProjectModal(e) {
+        if (e.type === "click" || e.key === "Enter") {
+          s.previousActiveElement = document.activeElement;
           app.openProject(this);
-        });
-        s.projectItems[i].addEventListener("keydown", function (e) {
-          if (e.key === "Enter") {
-            app.openProject(this);
-          }
-        });
+        }
+      }
+
+      for (let i = 0; i < s.projectItems.length; i++) {
+        s.projectItems[i].addEventListener("click", triggerProjectModal);
+        s.projectItems[i].addEventListener("keydown", triggerProjectModal);
       }
 
       document.getElementById("closeDetails").addEventListener("click", function () {
