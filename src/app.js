@@ -134,7 +134,7 @@ var app = (function () {
             })
             .catch((error) => {
                status.innerHTML =
-                  "Oops! There was a problem submitting your form.";
+                  "Error! There was a problem submitting your form.";
             });
       },
 
@@ -203,7 +203,7 @@ var app = (function () {
             let winScroll =
                document.body.scrollTop || document.documentElement.scrollTop;
             s.navLine.style.width = (winScroll / height) * 100 + "%";
-
+/*
             if (
                this.window.scrollY <
                document.getElementById("scrollDown").offsetTop +
@@ -249,14 +249,16 @@ var app = (function () {
                }
             }
             s.previousScrollPosition = currentScrollPosition;
-         });
 
+            */
+         });
+/*
          s.scrollDown.addEventListener("click", function () {
             window.scrollTo({
                top: document.querySelector("[data-content='work']").offsetTop,
                behavior: "smooth",
             });
-         });
+         });*/
 
          s.triggerMenu.addEventListener("click", function () {
             this.classList.toggle("is-active");
@@ -288,6 +290,7 @@ var app = (function () {
                   behavior: "smooth",
                });
             });
+            
          }
 
          function triggerProjectModal(e) {

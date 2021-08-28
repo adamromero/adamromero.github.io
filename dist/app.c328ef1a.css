@@ -34,11 +34,10 @@ select:-webkit-autofill:focus {
 }
 
 h3 {
-  text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 20px;
   font-weight: normal;
   text-decoration: underline;
-  margin: 0;
+  margin: 0 0 10px;
 }
 
 input[type=text] {
@@ -490,10 +489,6 @@ a:hover {
   color: white;
 }
 
-.content {
-  margin: 6rem 0 0;
-  padding: 6rem 0 0;
-}
 @media (min-width: 48rem) {
   .content {
     font-size: 1.125rem;
@@ -868,11 +863,13 @@ a:hover {
 }
 
 .intro__content {
+  display: grid;
   margin: 2rem 0 0;
 }
 @media (min-width: 48rem) {
   .intro__content {
-    margin: 5% 0 0;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
   }
 }
 
@@ -902,9 +899,10 @@ a:hover {
 .intro__text {
   font-size: 1.2rem;
   line-height: 1.5;
+  margin: 0 0 20px;
 }
 .intro__text:last-child {
-  margin: 3rem 0 0;
+  margin: 0;
 }
 
 .intro__footer {

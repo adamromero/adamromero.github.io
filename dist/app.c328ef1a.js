@@ -292,7 +292,7 @@ var app = function () {
         status.innerHTML = "Thanks for your submission!";
         s.form.reset();
       }).catch(error => {
-        status.innerHTML = "Oops! There was a problem submitting your form.";
+        status.innerHTML = "Error! There was a problem submitting your form.";
       });
     },
     closeProjectDetails: function () {
@@ -338,43 +338,63 @@ var app = function () {
         let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         s.navLine.style.width = winScroll / height * 100 + "%";
-
-        if (this.window.scrollY < document.getElementById("scrollDown").offsetTop + document.getElementById("scrollDown").offsetHeight) {
-          s.header.classList.add("hide");
-        } else {
-          s.header.classList.remove("hide");
-        }
-
-        let currentScrollPosition = this.window.scrollY + this.window.outerHeight;
-
-        if (currentScrollPosition > s.previousScrollPosition && currentScrollPosition > document.getElementById("intro").offsetHeight && currentScrollPosition < document.querySelector('[data-content="work"]').offsetTop) {
-          if (!s.scrollAboveIntro) {
-            window.scrollTo({
-              top: document.querySelector("[data-content='work']").offsetTop,
-              behavior: "smooth"
-            });
-            s.scrollAboveIntro = true;
-            s.scrollBelowIntro = false;
-          }
-        } else if (currentScrollPosition < s.previousScrollPosition && this.window.scrollY < document.querySelector('[data-content="work"]').offsetTop && this.window.scrollY > document.getElementById("intro").offsetHeight) {
-          if (!s.scrollBelowIntro) {
-            window.scrollTo({
-              top: document.querySelector("#intro"),
-              behavior: "smooth"
-            });
-            s.scrollBelowIntro = true;
-            s.scrollAboveIntro = false;
-          }
-        }
-
-        s.previousScrollPosition = currentScrollPosition;
+        /*
+                    if (
+                       this.window.scrollY <
+                       document.getElementById("scrollDown").offsetTop +
+                          document.getElementById("scrollDown").offsetHeight
+                    ) {
+                       s.header.classList.add("hide");
+                    } else {
+                       s.header.classList.remove("hide");
+                    }
+        
+                    let currentScrollPosition =
+                       this.window.scrollY + this.window.outerHeight;
+                    if (
+                       currentScrollPosition > s.previousScrollPosition &&
+                       currentScrollPosition >
+                          document.getElementById("intro").offsetHeight &&
+                       currentScrollPosition <
+                          document.querySelector('[data-content="work"]').offsetTop
+                    ) {
+                       if (!s.scrollAboveIntro) {
+                          window.scrollTo({
+                             top: document.querySelector("[data-content='work']")
+                                .offsetTop,
+                             behavior: "smooth",
+                          });
+                          s.scrollAboveIntro = true;
+                          s.scrollBelowIntro = false;
+                       }
+                    } else if (
+                       currentScrollPosition < s.previousScrollPosition &&
+                       this.window.scrollY <
+                          document.querySelector('[data-content="work"]').offsetTop &&
+                       this.window.scrollY >
+                          document.getElementById("intro").offsetHeight
+                    ) {
+                       if (!s.scrollBelowIntro) {
+                          window.scrollTo({
+                             top: document.querySelector("#intro"),
+                             behavior: "smooth",
+                          });
+                          s.scrollBelowIntro = true;
+                          s.scrollAboveIntro = false;
+                       }
+                    }
+                    s.previousScrollPosition = currentScrollPosition;
+        
+                    */
       });
-      s.scrollDown.addEventListener("click", function () {
-        window.scrollTo({
-          top: document.querySelector("[data-content='work']").offsetTop,
-          behavior: "smooth"
-        });
-      });
+      /*
+               s.scrollDown.addEventListener("click", function () {
+                  window.scrollTo({
+                     top: document.querySelector("[data-content='work']").offsetTop,
+                     behavior: "smooth",
+                  });
+               });*/
+
       s.triggerMenu.addEventListener("click", function () {
         this.classList.toggle("is-active");
         s.navTab.classList.toggle("is-active");
@@ -462,7 +482,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37625" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50629" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
