@@ -11,17 +11,19 @@
 }
 
 .content {
-   //margin: rem(96px) 0 0;
-   //padding: 6rem 0 0;
+   font-size: rem(18px);
+}
+
+.content--intro {
+   padding: 103px 0 0;
 
    @media (min-width: $mobile) {
-      font-size: rem(18px);
+      padding: 129px 0 0;
    }
 }
 
 .content__panel {
    margin: auto;
-   padding-top: rem(50px);
    color: white;
 }
 
