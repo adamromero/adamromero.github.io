@@ -1,15 +1,15 @@
 .footer {
    background: $black;
    color: $cararra;
-   padding: rem(20px 0 50px);
+   padding: 20px 0 50px;
 
    .footer__icons {
-      padding: rem(8px 20px 20px);
+      padding: 8px 20px 20px;
    }
 
    .footer__icon {
-      padding: rem(0 10px);
-      font-size: rem(42px);
+      padding: 0 10px;
+      font-size: 42px;
       text-decoration: none;
 
       &:first-child {
@@ -36,6 +36,6 @@
 
 .footer__copy {
    text-align: center;
-   font-size: rem(18px);
-   padding: rem(20px) 0 0;
+   font-size: 18px;
+   padding: 20px 0 0;
 }

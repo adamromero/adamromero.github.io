@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -149,7 +149,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -184,12 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"stylesheets/style.scss":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"stylesheets/style.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../fonts/Josefin_Sans/static/JosefinSans-Regular.ttf":[["JosefinSans-Regular.2749132e.ttf","fonts/Josefin_Sans/static/JosefinSans-Regular.ttf"],"fonts/Josefin_Sans/static/JosefinSans-Regular.ttf"],"./../icomoon/fonts/icomoon.eot":[["icomoon.5a1ed617.eot","icomoon/fonts/icomoon.eot"],"icomoon/fonts/icomoon.eot"],"./../icomoon/fonts/icomoon.ttf":[["icomoon.0e5398f3.ttf","icomoon/fonts/icomoon.ttf"],"icomoon/fonts/icomoon.ttf"],"./../icomoon/fonts/icomoon.woff":[["icomoon.ca850f60.woff","icomoon/fonts/icomoon.woff"],"icomoon/fonts/icomoon.woff"],"./../icomoon/fonts/icomoon.svg":[["icomoon.e519d691.svg","icomoon/fonts/icomoon.svg"],"icomoon/fonts/icomoon.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"app.js":[function(require,module,exports) {
+},{"./../fonts/Josefin_Sans/static/JosefinSans-Regular.ttf":[["JosefinSans-Regular.2749132e.ttf","fonts/Josefin_Sans/static/JosefinSans-Regular.ttf"],"fonts/Josefin_Sans/static/JosefinSans-Regular.ttf"],"./../icomoon/fonts/icomoon.eot":[["icomoon.5a1ed617.eot","icomoon/fonts/icomoon.eot"],"icomoon/fonts/icomoon.eot"],"./../icomoon/fonts/icomoon.ttf":[["icomoon.0e5398f3.ttf","icomoon/fonts/icomoon.ttf"],"icomoon/fonts/icomoon.ttf"],"./../icomoon/fonts/icomoon.woff":[["icomoon.ca850f60.woff","icomoon/fonts/icomoon.woff"],"icomoon/fonts/icomoon.woff"],"./../icomoon/fonts/icomoon.svg":[["icomoon.e519d691.svg","icomoon/fonts/icomoon.svg"],"icomoon/fonts/icomoon.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"app.js":[function(require,module,exports) {
 "use strict";
 
 require("./stylesheets/style.scss");
@@ -454,7 +454,7 @@ var app = function () {
 }();
 
 app.init();
-},{"./stylesheets/style.scss":"stylesheets/style.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./stylesheets/style.scss":"stylesheets/style.scss"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -482,7 +482,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41231" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44355" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -658,5 +658,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
 //# sourceMappingURL=/app.c328ef1a.js.map

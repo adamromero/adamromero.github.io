@@ -1,15 +1,15 @@
 .header {
    background: rgba(0, 0, 0, 0.75);
    color: $jade;
-   padding: rem(16px) 0 rem(8px);
+   padding: 16px 0 8px;
    top: 0;
    position: fixed;
    width: 100%;
    z-index: 999;
-   border-bottom: rem(1px) solid $jade;
+   border-bottom: 1px solid $jade;
 
    @media (min-width: $mobile) {
-      padding: rem(16px) 0;
+      padding: 16px 0;
       border: 0;
    }
 }
@@ -33,31 +33,31 @@
 
 .header__title {
    color: $cararra;
-   font-size: rem(14px);
+   font-size: 14px;
    font-weight: bold;
 
    @media (min-width: $small-mobile) {
-      font-size: rem(24px);
+      font-size: 24px;
    }
 }
 
 .header__icons {
-   padding: rem(15px) 0 0;
+   padding: 15px 0 0;
 }
 
 .header__icon {
-   font-size: rem(19px);
-   padding: 0 rem(10px) 0 0;
+   font-size: 19px;
+   padding: 0 10px 0 0;
    text-decoration: none;
 
    @media (min-width: $small-mobile) {
-      font-size: rem(24px);
+      font-size: 24px;
    }
 }
 
 .header__down {
    display: block;
-   font-size: rem(22px);
+   font-size: 22px;
    text-align: center;
    cursor: pointer;
    @include transition(transform 0.3s ease-in-out);
@@ -73,11 +73,11 @@
 
 .header__name {
    margin: 0;
-   font-size: rem(24px);
+   font-size: 24px;
    @include transition(all 0.3s);
 
    @media (min-width: $small-mobile) {
-      font-size: rem(32px);
+      font-size: 32px;
    }
 }
 
@@ -89,35 +89,35 @@
    overflow: hidden;
    position: relative;
    @include transition(all 0.3s ease-in-out);
-   font-size: rem(22px);
+   font-size: 22px;
    display: flex;
    flex-direction: column;
    justify-content: center;
 
    &.is-active {
-      height: rem(145px);
+      height: 145px;
       visibility: visible;
-      padding: rem(10px) 0 0;
+      padding: 10px 0 0;
    }
 
    @media (min-width: $mobile) {
       height: auto;
       visibility: visible;
-      padding: rem(16px) 0 0;
+      padding: 16px 0 0;
       text-align: left;
       display: block;
-      font-size: rem(18px);
+      font-size: 18px;
    }
 }
 
 .header__navtab {
    font-family: "Josefin Sans";
-   font-size: rem(20px);
+   font-size: 20px;
    color: $cararra;
    background: none;
    cursor: pointer;
    text-decoration: none;
-   padding: rem(8px);
+   padding: 8px;
    border: 0;
    @include transition(all 0.3s);
 
@@ -135,9 +135,9 @@
 
 .navigation-line {
    width: 0;
-   height: rem(2px);
+   height: 2px;
    background: $jade;
-   border-radius: rem(3px);
+   border-radius: 3px;
    display: none;
 
    @media (min-width: $mobile) {

@@ -1,7 +1,7 @@
 .row {
-   max-width: rem(1200px);
+   max-width: 1200px;
    margin: auto;
-   padding: 0 rem(20px);
+   padding: 0 20px;
 }
 
 .wrapper {
@@ -11,7 +11,7 @@
 }
 
 .content {
-   font-size: rem(18px);
+   font-size: 18px;
 }
 
 .content--intro {
@@ -28,13 +28,13 @@
 }
 
 .content__heading {
-   font-size: rem(20px);
-   border-bottom: rem(4px) solid $jade;
-   padding: 0 0 rem(5px);
+   font-size: 20px;
+   border-bottom: 4px solid $jade;
+   padding: 0 0 5px;
    color: white;
 
    @media (min-width: $mobile) {
-      font-size: rem(28px);
+      font-size: 28px;
    }
 }
 
@@ -56,7 +56,7 @@
 }
 
 .content__row {
-   margin: rem(16px) 0;
+   margin: 16px 0;
 }
 
 .content__row--nbm {
@@ -69,7 +69,7 @@
    display: block;
 
    @media (min-width: $mobile) {
-      max-width: rem(300px);
+      max-width: 300px;
    }
 }
 
@@ -81,19 +81,19 @@
 .content__text {
    font-family: "Josefin Sans", sans-serif;
    color: white;
-   margin: rem(16px) 0;
+   margin: 16px 0;
 }
 
 .content__text--bullet {
-   padding: 0 0 0 rem(20px);
+   padding: 0 0 0 20px;
 
    li {
-      margin: rem(10px) 0;
+      margin: 10px 0;
    }
 }
 
 .content__about {
-   padding-bottom: rem(20px);
+   padding-bottom: 20px;
 }
 
 .content__grid {
@@ -105,7 +105,7 @@
 }
 
 .content__grid-item {
-   padding: rem(20px);
+   padding: 20px;
    text-align: center;
 }
 
@@ -124,7 +124,7 @@
    text-align: center;
    color: white;
    text-shadow: 3px 3px 5px black;
-   font-size: rem(20px);
+   font-size: 20px;
    @include transition(all 0.3s ease-in-out);
    font-weight: bold;
    background: rgba(0, 0, 0, 0.45);
@@ -140,11 +140,11 @@
 }
 
 .content__link {
-   max-width: rem(300px);
+   max-width: 300px;
    width: 100%;
    display: inline-block;
    position: relative;
-   min-height: rem(164px);
+   min-height: 164px;
 }
 
 .experience__grid {
@@ -156,7 +156,7 @@
 }
 
 .experience__grid-item {
-   padding: 0 rem(32px 20px) 0;
+   padding: 0 32px 20px 0;
 }
 
 .social-media-icon {
@@ -174,12 +174,12 @@
    position: fixed;
    color: white;
    background: black;
-   max-width: rem(550px);
+   max-width: 550px;
    width: 100%;
-   min-height: rem(210px);
-   border: rem(2px) solid #0fb969;
-   border-radius: rem(3px);
-   padding: rem(13px 13px 22px);
+   min-height: 210px;
+   border: 2px solid #0fb969;
+   border-radius: 3px;
+   padding: 13px 13px 22px;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%) scale(0);
@@ -200,10 +200,10 @@
 }
 
 .project-details__link {
-   border: rem(2px) solid white;
-   padding: rem(3px 10px);
+   border: 2px solid white;
+   padding: 3px 10px;
    color: white;
-   border-radius: rem(3px);
+   border-radius: 3px;
    background: black;
    margin: auto;
    display: block;
@@ -223,15 +223,15 @@
 .project-details__close {
    font-family: "Josefin Sans";
    text-align: center;
-   padding: rem(5px) 0 rem(10px);
+   padding: 5px 0 10px;
    cursor: pointer;
-   width: rem(50px);
+   width: 50px;
    margin: auto;
    background: none;
    border: 0;
    color: white;
    display: block;
-   font-size: rem(18px);
+   font-size: 18px;
    @include transition(color 0.3s ease-in-out);
 
    &:hover,
@@ -258,12 +258,12 @@
 
 .success {
    color: $spring-green;
-   padding: 0 0 rem(16px);
+   padding: 0 0 16px;
 }
 
 .fail {
    color: $monza;
-   padding: 0 0 rem(16px);
+   padding: 0 0 16px;
 }
 
 .hide {

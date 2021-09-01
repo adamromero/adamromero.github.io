@@ -11,7 +11,7 @@ body {
 [class*=" devicon-"],
 [class^="devicon-"] {
    color: $jade;
-   font-size: rem(24px);
+   font-size: 24px;
 }
 
 input:-webkit-autofill,
@@ -37,14 +37,14 @@ h3 {
 
 input[type="text"] {
    font-family: "Josefin Sans", sans-serif;
-   font-size: rem(18px);
-   padding: rem(5px);
-   border-radius: rem(3px);
-   margin: 0 0 rem(20px);
+   font-size: 18px;
+   padding: 5px;
+   border-radius: 3px;
+   margin: 0 0 20px;
    width: 100%;
    background: black;
    color: white;
-   border: rem(2px) solid white;
+   border: 2px solid white;
    box-sizing: border-box;
 
    @media (min-width: $mobile) {
@@ -53,13 +53,13 @@ input[type="text"] {
 
    @include placeholder {
       font-family: "Josefin Sans", sans-serif;
-      font-size: rem(18px);
+      font-size: 18px;
       color: white;
    }
 
    &:placeholder-shown {
       font-family: "Josefin Sans", sans-serif;
-      font-size: rem(18px);
+      font-size: 18px;
       color: white;
    }
 
@@ -73,14 +73,14 @@ input[type="text"] {
 
 textarea {
    font-family: "Josefin Sans", sans-serif;
-   font-size: rem(18px);
+   font-size: 18px;
    width: 100%;
-   border-radius: rem(3px);
-   margin: 0 0 rem(20px);
+   border-radius: 3px;
+   margin: 0 0 20px;
    background: black;
    color: white;
-   border: rem(2px) solid white;
-   padding: rem(6px);
+   border: 2px solid white;
+   padding: 6px;
    box-sizing: border-box;
 
    @media (min-width: $mobile) {
@@ -89,13 +89,13 @@ textarea {
 
    @include placeholder {
       font-family: "Josefin Sans", sans-serif;
-      font-size: rem(18px);
+      font-size: 18px;
       color: white;
    }
 
    &:placeholder-shown {
       font-family: "Josefin Sans", sans-serif;
-      font-size: rem(18px);
+      font-size: 18px;
       color: white;
    }
 
@@ -108,18 +108,18 @@ textarea {
 }
 
 input[type="submit"] {
-   padding: rem(10px);
-   border-radius: rem(3px);
+   padding: 10px;
+   border-radius: 3px;
    border: 0;
-   font-size: rem(16px);
+   font-size: 16px;
    font-weight: bold;
    text-transform: uppercase;
    cursor: pointer;
-   max-width: rem(200px);
+   max-width: 200px;
    width: 100%;
    background: black;
    color: white;
-   border: rem(2px) solid white;
+   border: 2px solid white;
    @include transition(all 0.3s ease-in-out);
    margin: auto;
 
