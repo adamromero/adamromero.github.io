@@ -17,12 +17,16 @@
 }
 
 .content--intro {
-   padding: 129px 0 0;
+   padding: 103px 0 0;
+
+   @media (min-width: $mobile) {
+      padding: 129px 0 0;
+   }
 }
 
 .content__panel {
    margin: auto;
-   padding-top: 50px;
+   padding-top: 35px;
    color: white;
 }
 

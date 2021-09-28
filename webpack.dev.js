@@ -13,4 +13,12 @@ module.exports = merge(common, {
       path: path.resolve(__dirname, "dist"),
       clean: true,
    },
+   module: {
+      rules: [
+         {
+            test: /\.s[ac]ss$/i,
+            use: ["style-loader", "css-loader", "sass-loader"],
+         },
+      ],
+   },
 });
