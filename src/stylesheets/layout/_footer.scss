@@ -1,0 +1,41 @@
+.footer {
+   background: $black;
+   color: $cararra;
+   padding: 20px 0 50px;
+
+   .footer__icons {
+      padding: 8px 20px 20px;
+   }
+
+   .footer__icon {
+      padding: 0 10px;
+      font-size: 42px;
+      text-decoration: none;
+
+      &:first-child {
+         padding-left: 0;
+      }
+   }
+
+   .input-submit[type="submit"] {
+      color: $jade;
+      border-color: $jade;
+
+      &:disabled {
+         cursor: not-allowed;
+         color: white;
+         border-color: white;
+
+         &:hover {
+            color: white;
+            border-color: white;
+         }
+      }
+   }
+}
+
+.footer__copy {
+   text-align: center;
+   font-size: 18px;
+   padding: 20px 0 0;
+}

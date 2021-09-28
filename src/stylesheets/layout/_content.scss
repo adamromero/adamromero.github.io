@@ -1,38 +1,39 @@
 .row {
-   max-width: rem(1200px);
+   max-width: 1200px;
    margin: auto;
-   padding: 0 rem(20px);
+   padding: 0 20px;
 }
 
 .wrapper {
    background: black;
    position: relative;
+   color: white;
 }
 
 .content {
-   padding: rem(96px) 0 0;
-
    @media (min-width: $mobile) {
-      font-size: rem(18px);
+      font-size: 18px;
    }
+}
+
+.content--intro {
+   padding: 129px 0 0;
 }
 
 .content__panel {
    margin: auto;
-   padding-top: rem(20px);
+   padding-top: 50px;
    color: white;
 }
 
 .content__heading {
-   font-size: rem(16px);
-   text-transform: uppercase;
-   border-bottom: rem(4px) solid $jade;
-   letter-spacing: rem(5px);
-   padding: 0 0 rem(5px);
+   font-size: 20px;
+   border-bottom: 4px solid $jade;
+   padding: 0 0 5px;
    color: white;
 
    @media (min-width: $mobile) {
-      font-size: rem(18px);
+      font-size: 28px;
    }
 }
 
@@ -54,7 +55,7 @@
 }
 
 .content__row {
-   margin: rem(16px) 0;
+   margin: 16px 0;
 }
 
 .content__row--nbm {
@@ -67,7 +68,7 @@
    display: block;
 
    @media (min-width: $mobile) {
-      max-width: rem(300px);
+      max-width: 300px;
    }
 }
 
@@ -77,22 +78,21 @@
 }
 
 .content__text {
-   font-family: "Varela Round", sans-serif;
-   letter-spacing: rem(0.4px);
+   font-family: "Josefin Sans", sans-serif;
    color: white;
-   margin: rem(16px) 0;
+   margin: 16px 0;
 }
 
 .content__text--bullet {
-   padding: 0 0 0 rem(20px);
+   padding: 0 0 0 20px;
 
    li {
-      margin: rem(10px) 0;
+      margin: 10px 0;
    }
 }
 
 .content__about {
-   padding-bottom: rem(20px);
+   padding-bottom: 20px;
 }
 
 .content__grid {
@@ -104,11 +104,12 @@
 }
 
 .content__grid-item {
-   padding: rem(20px);
+   padding: 20px;
    text-align: center;
 }
 
 .content__overlay {
+   font-family: "Josefin Sans", sans-serif;
    position: absolute;
    top: 0;
    left: 0;
@@ -117,28 +118,32 @@
    cursor: pointer;
    display: flex;
    justify-content: center;
+   align-items: center;
    flex-direction: column;
    text-align: center;
    color: white;
    text-shadow: 3px 3px 5px black;
-   font-size: rem(16px);
+   font-size: 20px;
    @include transition(all 0.3s ease-in-out);
-   text-transform: uppercase;
    font-weight: bold;
    background: rgba(0, 0, 0, 0.45);
+   border: 0;
+   width: 100%;
 
    &:hover,
+   &:active,
+   &:focus,
    &.is-active {
       background: rgba(9, 185, 106, 0.5);
    }
 }
 
 .content__link {
-   max-width: rem(300px);
+   max-width: 300px;
    width: 100%;
    display: inline-block;
    position: relative;
-   min-height: rem(164px);
+   min-height: 164px;
 }
 
 .experience__grid {
@@ -150,13 +155,15 @@
 }
 
 .experience__grid-item {
-   padding: 0 rem(32px 20px) 0;
+   padding: 0 32px 20px 0;
 }
 
 .social-media-icon {
    color: white;
 
-   &:hover {
+   &:hover,
+   &:focus,
+   &:active {
       color: $jade;
       @include transition(color 0.3s);
    }
@@ -166,35 +173,36 @@
    position: fixed;
    color: white;
    background: black;
-   max-width: rem(550px);
+   max-width: 550px;
    width: 100%;
-   min-height: rem(210px);
-   border: rem(2px) solid #0fb969;
-   border-radius: rem(3px);
-   padding: rem(13px 13px 22px);
+   min-height: 210px;
+   border: 2px solid #0fb969;
+   border-radius: 3px;
+   padding: 13px 13px 22px;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%) scale(0);
    transform-origin: center;
    box-sizing: border-box;
-   visibility: hidden;
+   //visibility: hidden;
+   opacity: 0;
    @include transition(all 0.3s ease-in-out);
    -webkit-font-smoothing: antialiased;
-   font-family: "Varela Round", sans-serif;
+   font-family: "Josefin Sans", sans-serif;
 
    &.is-active {
       transform: translate(-50%, -50%) scale(1);
       z-index: 9999;
       opacity: 1;
-      visibility: visible;
+      //visibility: visible;
    }
 }
 
 .project-details__link {
-   border: rem(2px) solid white;
-   padding: rem(3px 10px);
+   border: 2px solid white;
+   padding: 3px 10px;
    color: white;
-   border-radius: rem(3px);
+   border-radius: 3px;
    background: black;
    margin: auto;
    display: block;
@@ -203,21 +211,31 @@
    text-decoration: none;
    @include transition(all 0.3s ease-in-out);
 
-   &:hover {
+   &:hover,
+   &:active,
+   &:focus {
       border-color: $jade;
       color: $jade;
    }
 }
 
 .project-details__close {
+   font-family: "Josefin Sans";
    text-align: center;
-   padding: rem(5px) 0 rem(10px);
+   padding: 5px 0 10px;
    cursor: pointer;
-   width: rem(50px);
+   width: 50px;
    margin: auto;
+   background: none;
+   border: 0;
+   color: white;
+   display: block;
+   font-size: 18px;
    @include transition(color 0.3s ease-in-out);
 
-   &:hover {
+   &:hover,
+   &:active,
+   &:focus {
       color: $jade;
    }
 }
@@ -239,10 +257,85 @@
 
 .success {
    color: $spring-green;
-   padding: 0 0 rem(16px);
+   padding: 0 0 16px;
 }
 
 .fail {
    color: $monza;
-   padding: 0 0 rem(16px);
+   padding: 0 0 16px;
+}
+
+.hide {
+   display: none;
+}
+
+.contact-form {
+   display: flex;
+   flex-direction: column;
+   max-width: 25rem;
+   margin: 3rem 0;
+
+   .contact-form__input {
+      &::placeholder {
+         color: #272727;
+         font-size: 14px;
+      }
+   }
+
+   .contact-form__input,
+   .contact-form__input:focus,
+   .contact-form__input:active,
+   .contact-form__input:hover {
+      font-family: "Josefin Sans";
+      font-size: 1rem;
+      height: 1.8rem;
+      -webkit-box-shadow: none;
+      -webkit-text-fill-color: black;
+      border: 0;
+      padding: 0.375rem;
+   }
+}
+
+.contact-form__textarea {
+   color: black;
+   background: white;
+   height: 8rem;
+   width: 100%;
+   font-size: 1rem;
+   border-radius: 0;
+
+   &::placeholder {
+      color: #272727;
+      font-size: 14px;
+   }
+}
+
+.contact-form__margin {
+   margin: 0 0 1rem;
+}
+
+.contact-form__button {
+   font-family: "Josefin Sans";
+   font-size: 1.1rem;
+   max-width: 12rem;
+   padding: 0.8rem;
+   cursor: pointer;
+   border: 0;
+   background: $jade;
+   transition: background 0.2s ease-in-out;
+
+   &:disabled {
+      cursor: not-allowed;
+      background: #7bbfa1;
+
+      &:hover {
+         background: #7bbfa1;
+      }
+   }
+
+   &:hover,
+   &:focus,
+   &:active {
+      background: lighten($jade, 25%);
+   }
 }

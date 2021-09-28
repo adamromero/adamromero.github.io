@@ -1,20 +1,21 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Varela Round,sans-serif;
+   margin: 0;
+   padding: 0;
+   font-family: "Josefin Sans", sans-serif;
 }
 
 .preload * {
-    transition: none !important;
+   transition: none !important;
 }
 
-[class*=" devicon-"], [class^=devicon-] {
-    color: $jade;
-    font-size: rem(24px);
+[class*=" devicon-"],
+[class^="devicon-"] {
+   color: $jade;
+   font-size: 24px;
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
@@ -22,120 +23,122 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    -webkit-text-fill-color: white;
-    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
-    transition: background-color 5000s ease-in-out 0s;
+   -webkit-text-fill-color: white;
+   -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+   transition: background-color 5000s ease-in-out 0s;
 }
 
 h3 {
-    text-transform: uppercase;
-    font-size: rem(16px);
-    font-weight: normal;
-    text-decoration: underline;
-    margin: 0;
+   font-size: 20px;
+   font-weight: normal;
+   text-decoration: underline;
+   margin: 0 0 10px;
 }
 
-input[type='text'] {
-    font-family: Varela Round,sans-serif;
-    font-size: rem(18px);
-    padding: rem(5px);
-    border-radius: rem(3px);
-    margin: 0 0 rem(20px);
-    width: 100%;
-    background: black;
-    color: white;
-    border: rem(2px) solid white;
-    box-sizing: border-box;
+input[type="text"] {
+   font-family: "Josefin Sans", sans-serif;
+   font-size: 18px;
+   padding: 5px;
+   border-radius: 3px;
+   margin: 0 0 20px;
+   width: 100%;
+   background: black;
+   color: white;
+   border: 2px solid white;
+   box-sizing: border-box;
 
-    @media (min-width: $mobile) {
-        width: 50%;
-    }
+   @media (min-width: $mobile) {
+      width: 50%;
+   }
 
-    @include placeholder {
-        font-family: Varela Round,sans-serif;
-        font-size: rem(18px);
-        color: white;
-    }
+   @include placeholder {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 18px;
+      color: white;
+   }
 
-    &:placeholder-shown {
-        font-family: Varela Round,sans-serif;
-        font-size: rem(18px);
-        color: white;
-    }
+   &:placeholder-shown {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 18px;
+      color: white;
+   }
 
-    &:active, &:focus {
-        border-color: $jade;
-        color: $jade;
-        outline: none;
-    }
+   &:active,
+   &:focus {
+      border-color: $jade;
+      color: $jade;
+      outline: none;
+   }
 }
 
 textarea {
-    font-family: Varela Round,sans-serif;
-    font-size: rem(18px);
-    width: 100%;
-    border-radius: rem(3px);
-    margin: 0 0 rem(20px);
-    background: black;
-    color: white;
-    border: rem(2px) solid white;
-    padding: rem(6px);
-    box-sizing: border-box;
+   font-family: "Josefin Sans", sans-serif;
+   font-size: 18px;
+   width: 100%;
+   border-radius: 3px;
+   margin: 0 0 20px;
+   background: black;
+   color: white;
+   border: 2px solid white;
+   padding: 6px;
+   box-sizing: border-box;
 
-    @media (min-width: $mobile) {
-        width: 50%;
-    }
+   @media (min-width: $mobile) {
+      width: 50%;
+   }
 
-    @include placeholder {
-        font-family: Varela Round,sans-serif;
-        font-size: rem(18px);
-        color: white;
-    }
+   @include placeholder {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 18px;
+      color: white;
+   }
 
-    &:placeholder-shown {
-        font-family: Varela Round,sans-serif;
-        font-size: rem(18px);
-        color: white;
-    }
+   &:placeholder-shown {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 18px;
+      color: white;
+   }
 
-    &:active, &:focus {
-        border-color: $jade;
-        color: $jade;
-        outline: none;
-    }
+   &:active,
+   &:focus {
+      //border-color: $jade;
+      //color: $jade;
+      outline: none;
+   }
 }
 
-input[type='submit'] {
-    padding: rem(10px);
-    border-radius: rem(3px);
-    border: 0;
-    font-size: rem(16px);
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    max-width: rem(200px);
-    width: 100%;
-    background: black;
-    color: white;
-    border: rem(2px) solid white;
-    @include transition(all .3s ease-in-out);
-    margin: auto;
+input[type="submit"] {
+   padding: 10px;
+   border-radius: 3px;
+   border: 0;
+   font-size: 16px;
+   font-weight: bold;
+   text-transform: uppercase;
+   cursor: pointer;
+   max-width: 200px;
+   width: 100%;
+   background: black;
+   color: white;
+   border: 2px solid white;
+   @include transition(all 0.3s ease-in-out);
+   margin: auto;
 
-    &:hover {
-        border-color: $jade;
-        color: $jade;
-    }
+   &:hover {
+      border-color: $jade;
+      color: $jade;
+   }
 
-    @media (min-width: $mobile) {
-        display: inline-block;
-    }
+   @media (min-width: $mobile) {
+      display: inline-block;
+   }
 }
 
 a {
-    color: white;
-    transition: 0.2s color;
+   color: white;
+   transition: 0.2s color;
+   text-decoration: none;
 
-    &:hover {
-        color: $jade;
-    }
+   &:hover {
+      color: $jade;
+   }
 }

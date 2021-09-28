@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Adam Romero | Web Developer</title>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="shortcut icon" href="dist/favicon.ico" type="image/x-icon" />
-      <link
-         href="https://fonts.googleapis.com/css?family=Oswald"
-         rel="stylesheet"
-      />
-      <link
-         href="https://fonts.googleapis.com/css?family=Varela+Round"
-         rel="stylesheet"
-      />
+      <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
       <link
          rel="stylesheet"
-         href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
+         href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css"
       />
-      <link rel="stylesheet" type="text/css" href="dist/main.css" />
+      <title>Adam Romero | Web Developer</title>
    </head>
    <body class="preload">
       <div class="wrapper">
@@ -24,12 +17,8 @@
             <div class="header__inner row">
                <div class="header__heading">
                   <div>
-                     <h1 class="header__name">
-                        Adam Romero
-                     </h1>
-                     <div class="header__title">
-                        Web Developer
-                     </div>
+                     <h1 class="header__name">Adam Romero</h1>
+                     <div class="header__title">Web Developer</div>
                   </div>
                   <div class="header__icons">
                      <a
@@ -53,105 +42,65 @@
                </div>
                <i id="triggerMenu" class="header__down icon-chevron-down"></i>
                <div class="header__nav">
-                  <div data-tab="experience" class="header__navtab">
-                     Experience
-                  </div>
-                  <div data-tab="work" class="header__navtab">
-                     Work Projects
-                  </div>
-                  <div data-tab="personal" class="header__navtab">
-                     Personal Projects
-                  </div>
-                  <div data-tab="contact" class="header__navtab">Contact</div>
+                  <button data-tab="intro" class="header__navtab navtab">
+                     Intro
+                  </button>
+                  <button data-tab="work" class="header__navtab navtab">
+                     Projects
+                  </button>
+                  <button data-tab="contact" class="header__navtab navtab">
+                     Contact
+                  </button>
                   <div class="navigation-line"></div>
                </div>
             </div>
          </header>
-         <div class="content">
-            <div data-content="experience" class="content__panel row">
-               <h2 class="content__heading">Experience</h2>
-               <div class="experience__grid">
-                  <div class="experience__grid-item">
+         <div id="intro" data-content="intro" class="content content--intro">
+            <div class="content__panel row">
+               <h2 class="content__heading">Intro</h2>
+               <div class="intro__content">
+                  <div class="intro__text">
                      <h3>About</h3>
-                     <div class="content__text">
-                        This is my portfolio site displaying various web
-                        development projects I've worked on both professionally
-                        and on my own time. Feel free to network with me through
-                        social media.
-                        <a class="link" href="resume.pdf" target="_blank"
-                           >Download Resume</a
-                        >
-                     </div>
-                     <h3>Technical Skills</h3>
-                     <ul class="content__text content__text--bullet">
-                        <li>
-                           HTML <i class="devicon-html5-plain"></i>, CSS
-                           <i class="devicon-css3-plain"></i>, JavaScript
-                           <i class="devicon-javascript-plain"></i>, C#
-                           <i class="devicon-csharp-plain"></i>, MySQL
-                           <i class="devicon-mysql-plain"></i>
-                        </li>
-                        <li>
-                           Sass <i class="devicon-sass-original"></i>, jQuery
-                           <i class="devicon-jquery-plain"></i>, Node
-                           <i class="devicon-nodejs-plain"></i>, Express
-                           <i class="devicon-express-original"></i>, React
-                           <i class="devicon-react-original"></i>, Webpack
-                           <i class="devicon-webpack-plain"></i>
-                        </li>
-                        <li>
-                           Git <i class="devicon-git-plain"></i>, Tortoise SVN
-                        </li>
-                     </ul>
+                     Hello! This is my portfolio site displaying various web
+                     development projects I've worked on both professionally and
+                     on my own time. Feel free to network with me through social
+                     media.
                   </div>
-                  <div class="experience__grid-item">
-                     <h3>Education</h3>
-                     <ul class="content__text content__text--bullet">
-                        <li>
-                           AA in Business Administration (June 2011)
-                           <div>Cuesta College</div>
-                        </li>
-                        <li>
-                           BS in Business Administration - Information Systems
-                           (June 2015)
-                           <div>Cal Poly San Luis Obispo</div>
-                        </li>
-                     </ul>
-                     <h3>Employment</h3>
-                     <ul class="content__text content__text--bullet">
-                        <li>
-                           <img
-                              src="dist/graphics/auspient.svg"
-                              width="100"
-                              alt="Auspient"
-                           />
-                           <div>
-                              Auspient
-                              <div class="inline-block">
-                                 (August 2015 - Present)
-                              </div>
-                           </div>
-                           <div>Front-End Developer</div>
-                        </li>
-                     </ul>
+                  <div class="intro__text">
+                     <h3>Technical Skills</h3>
+                     HTML <i class="devicon-html5-plain"></i>, CSS
+                     <i class="devicon-css3-plain"></i>, JavaScript
+                     <i class="devicon-javascript-plain"></i>, React
+                     <i class="devicon-react-original"></i>, Node
+                     <i class="devicon-nodejs-plain"></i>, Express
+                     <i class="devicon-express-original"></i>, GraphQL
+                     <i class="devicon-graphql-plain"></i>, MongoDB
+                     <i class="devicon-mongodb-plain"></i>, Webpack
+                     <i class="devicon-webpack-plain"></i>, Git
+                     <i class="devicon-git-plain"></i>, Figma
+                     <i class="devicon-figma-plain"></i>
                   </div>
                </div>
             </div>
-            <div data-content="work" class="content__panel row">
-               <h2 class="content__heading">Work Projects</h2>
+         </div>
+         <div id="work" data-content="work" class="content">
+            <div class="content__panel row">
+               <h2 class="content__heading">Projects</h2>
                <div class="content__grid">
                   <div class="content__grid-item">
                      <div class="content__link">
                         <img
                            class="content__image"
-                           src="dist/graphics/lls.png"
+                           src="./graphics/lls.png"
                            alt="LeftLane Sports"
                         />
-                        <div class="content__overlay">LeftLane Sports</div>
+                        <button class="content__overlay">
+                           LeftLane Sports
+                        </button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
-                              src="dist/graphics/lls.png"
+                              src="./graphics/lls.png"
                               alt="LeftLane Sports"
                            />
                            <div class="content__row">
@@ -184,14 +133,14 @@
                      <div class="content__link">
                         <img
                            class="content__image"
-                           src="dist/graphics/agu.png"
+                           src="./graphics/agu.png"
                            alt="ACTIVE GearUp"
                         />
-                        <div class="content__overlay">ACTIVE GearUp</div>
+                        <button class="content__overlay">ACTIVE GearUp</button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
-                              src="dist/graphics/agu.png"
+                              src="./graphics/agu.png"
                               alt="ACTIVE GearUp"
                            />
                            <div class="content__row">
@@ -216,14 +165,16 @@
                      <div class="content__link">
                         <img
                            class="content__image"
-                           src="dist/graphics/ows.png"
+                           src="./graphics/ows.png"
                            alt="Overton Workshop"
                         />
-                        <div class="content__overlay">Overton Workshop</div>
+                        <button class="content__overlay">
+                           Overton Workshop
+                        </button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
-                              src="dist/graphics/ows.png"
+                              src="./graphics/ows.png"
                               alt="Overton Workshop"
                            />
                            <div class="content__row">
@@ -249,14 +200,14 @@
                      <div class="content__link">
                         <img
                            class="content__image"
-                           src="dist/graphics/aus.png"
+                           src="./graphics/aus.png"
                            alt="Auspient"
                         />
-                        <div class="content__overlay">Auspient</div>
+                        <button class="content__overlay">Auspient</button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
-                              src="dist/graphics/aus.png"
+                              src="./graphics/aus.png"
                               alt="Auspient"
                            />
                            <div class="content__row">
@@ -279,22 +230,21 @@
                      </div>
                   </div>
                </div>
-            </div>
-            <div data-content="personal" class="content__panel row">
-               <h2 class="content__heading">Personal Projects</h2>
                <div class="content__grid">
                   <div class="content__grid-item">
                      <div class="content__link">
                         <img
                            class="content__image"
-                           src="dist/graphics/carvings.png?033020"
+                           src="./graphics/carvings.png?033020"
                            alt="Nightmare Carvings"
                         />
-                        <div class="content__overlay">Nightmare Carvings</div>
+                        <button class="content__overlay">
+                           Nightmare Carvings
+                        </button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
-                              src="dist/graphics/carvings.png?033020"
+                              src="./graphics/carvings.png?033020"
                               alt="Nightmare Carvings"
                            />
                            <div class="content__row">
@@ -333,14 +283,14 @@
                      <div class="content__link">
                         <img
                            class="content__image"
-                           src="dist/graphics/cant-sleep.png"
+                           src="./graphics/cant-sleep.png"
                            alt="Can't Sleep"
                         />
-                        <div class="content__overlay">Can't Sleep?</div>
+                        <button class="content__overlay">Can't Sleep?</button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
-                              src="dist/graphics/cant-sleep.png"
+                              src="./graphics/cant-sleep.png"
                               alt="Can't Sleep"
                            />
                            <div class="content__row">
@@ -381,14 +331,14 @@
                      <div class="content__link">
                         <img
                            class="content__image"
-                           src="dist/graphics/chess.png"
+                           src="./graphics/chess.png"
                            alt="Chess"
                         />
-                        <div class="content__overlay">Chess</div>
+                        <button class="content__overlay">Chess</button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
-                              src="dist/graphics/chess.png"
+                              src="./graphics/chess.png"
                               alt="Chess"
                            />
                            <div class="content__row">
@@ -396,7 +346,8 @@
                               Basic Chess game built with vanilla JavaScript.
                            </div>
                            <div class="content__row">
-                              <span class="bold">Technologies:</span> JavaScript
+                              <span class="bold">Technologies:</span>
+                              JavaScript
                            </div>
                            <div class="content__row">
                               <a
@@ -423,14 +374,14 @@
                      <div class="content__link">
                         <img
                            class="content__image"
-                           src="dist/graphics/morse.png"
+                           src="./graphics/morse.png"
                            alt="Morse Code App"
                         />
-                        <div class="content__overlay">Morse Code</div>
+                        <button class="content__overlay">Morse Code</button>
                         <div class="content__info hide">
                            <img
                               class="content__image"
-                              src="dist/graphics/morse.png"
+                              src="./graphics/morse.png"
                               alt="Morse Code App"
                            />
                            <div class="content__row">
@@ -465,12 +416,59 @@
                </div>
             </div>
             <div class="project-details">
-               <div id="closeDetails" class="project-details__close">Close</div>
+               <button id="closeDetails" class="project-details__close">
+                  Close
+               </button>
                <div class="project-details__text"></div>
             </div>
-            <footer class="footer" data-content="contact">
+            <footer id="contact" class="footer" data-content="contact">
                <div class="row">
                   <h2 class="content__heading">Contact</h2>
+               </div>
+               <div class="row">
+                  <form
+                     id="contactForm"
+                     class="contact-form"
+                     action="https://formspree.io/f/mzbykzyw"
+                     method="POST"
+                  >
+                     <input
+                        class="contact-form__input contact-form__margin"
+                        name="name"
+                        id="name"
+                        type="name"
+                        placeholder="Name"
+                     />
+                     <input
+                        class="contact-form__input contact-form__margin"
+                        name="Email"
+                        id="email"
+                        type="email"
+                        placeholder="Email"
+                     />
+                     <input
+                        class="contact-form__input contact-form__margin"
+                        name="Subject"
+                        id="subject"
+                        type="subject"
+                        placeholder="Subject"
+                     />
+                     <textarea
+                        class="contact-form__textarea contact-form__margin"
+                        name="message"
+                        id="message"
+                        placeholder="Message"
+                     ></textarea>
+                     <button
+                        id="submitButton"
+                        class="contact-form__button"
+                        type="submit"
+                        disabled
+                     >
+                        Submit
+                     </button>
+                     <p id="formStatus"></p>
+                  </form>
                </div>
                <div class="row footer__icons">
                   <a
@@ -498,6 +496,5 @@
          </div>
          <div class="overlay"></div>
       </div>
-      <script src="dist/bundle.js"></script>
    </body>
 </html>
