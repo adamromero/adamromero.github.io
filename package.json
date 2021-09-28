@@ -6,7 +6,8 @@
    "main": "app.js",
    "scripts": {
       "start": "webpack serve --open --config webpack.dev.js",
-      "build": "webpack --config webpack.prod.js"
+      "build": "webpack --config webpack.prod.js",
+      "deploy": "gh-pages -d dist"
    },
    "dependencies": {
       "body-parser": "^1.18.3",
