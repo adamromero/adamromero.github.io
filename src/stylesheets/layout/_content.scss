@@ -188,7 +188,7 @@
    transform: translate(-50%, -50%) scale(0);
    transform-origin: center;
    box-sizing: border-box;
-   //visibility: hidden;
+   line-height: 22px;
    opacity: 0;
    @include transition(all 0.3s ease-in-out);
    -webkit-font-smoothing: antialiased;
@@ -198,7 +198,6 @@
       transform: translate(-50%, -50%) scale(1);
       z-index: 9999;
       opacity: 1;
-      //visibility: visible;
    }
 }
 
