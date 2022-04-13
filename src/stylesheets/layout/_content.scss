@@ -136,7 +136,7 @@
 
    &:hover,
    &:active,
-   &:focus,
+   &:focus-visible,
    &.is-active {
       background: rgba(9, 185, 106, 0.5);
    }
