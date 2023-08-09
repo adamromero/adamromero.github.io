@@ -9,11 +9,6 @@
          rel="stylesheet"
          href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css"
       />
-      <link
-         rel="stylesheet"
-         href="https://unpkg.com/flickity@2/dist/flickity.min.css"
-      />
-
       <title>Adam Romero | Web Developer</title>
    </head>
    <body class="preload">
@@ -76,7 +71,8 @@
                      HTML <i class="devicon-html5-plain"></i>, CSS
                      <i class="devicon-css3-plain"></i>, JavaScript
                      <i class="devicon-javascript-plain"></i>, React
-                     <i class="devicon-react-original"></i>, Node
+                     <i class="devicon-react-original"></i>, Next
+                     <i class="devicon-nextjs-plain"></i>, Node
                      <i class="devicon-nodejs-plain"></i>, Express
                      <i class="devicon-express-original"></i>, MongoDB
                      <i class="devicon-mongodb-plain"></i>, Git
@@ -256,8 +252,53 @@
                      </div>
                   </div>
                </div>
-
                <div class="content__grid">
+                  <div class="content__grid-item">
+                     <div class="content__link">
+                        <img
+                           class="content__image"
+                           src="./graphics/movievoting.png"
+                           alt="Patreon Movie Voting"
+                        />
+                        <button class="content__overlay">
+                           Patreon Movie Voting
+                        </button>
+                        <div class="content__info hide">
+                           <img
+                              class="content__image"
+                              src="./graphics/movievoting.png"
+                              alt="Patreon Movie Voting"
+                           />
+                           <div class="content__row">
+                              <div class="bold">Personal Project</div>
+                              <span class="bold">Description:</span>
+                              The is a movie request and voting system for a
+                              movie reaction/review channel. Only pledged
+                              patrons are able to connect through the Patreon
+                              OAuth provider using Next Auth. When patrons sign
+                              in, they are able to make requests using a movie
+                              API and vote on requests made by other patrons.
+                              There are filtering and sorting features to see
+                              which movies are the most requested within
+                              different categories.
+                           </div>
+                           <div class="content__row">
+                              <span class="bold">Technologies:</span> React,
+                              Next, MongoDB
+                           </div>
+                           <div class="content__row">
+                              <a
+                                 class="project-details__link"
+                                 href="https://patreon-movie-voting.vercel.app/"
+                                 target="_blank"
+                              >
+                                 Visit Project
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
                   <div class="content__grid-item">
                      <div class="content__link">
                         <img
@@ -302,55 +343,6 @@
                               <a
                                  class="project-details__link"
                                  href="https://github.com/adamromero/bug-tracker"
-                                 target="_blank"
-                              >
-                                 Visit Github
-                              </a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="content__grid-item">
-                     <div class="content__link">
-                        <img
-                           class="content__image"
-                           src="./graphics/chess.png"
-                           alt="Chess"
-                        />
-                        <button class="content__overlay">Chess</button>
-                        <div class="content__info hide">
-                           <img
-                              class="content__image"
-                              src="./graphics/chess.png"
-                              alt="Chess"
-                           />
-                           <div class="content__row">
-                              <div class="bold">Personal Project</div>
-                              <span class="bold">Description:</span>
-                              A two player Chess game built with vanilla
-                              JavaScript. Some of the challenges I faced were
-                              validating the unique moves of each of the pieces
-                              as well as finding the best way to handle event
-                              listeners when selecting and deselecting a piece.
-                           </div>
-                           <div class="content__row">
-                              <span class="bold">Technologies:</span>
-                              JavaScript
-                           </div>
-                           <div class="content__row">
-                              <a
-                                 class="project-details__link"
-                                 href="http://chess.adamromero.surge.sh/"
-                                 target="_blank"
-                              >
-                                 Visit Project
-                              </a>
-                           </div>
-                           <div class="content__row content__row--nbm">
-                              <a
-                                 class="project-details__link"
-                                 href="https://github.com/adamromero/chess-v2"
                                  target="_blank"
                               >
                                  Visit Github
@@ -410,6 +402,106 @@
                      </div>
                   </div> -->
                </div>
+               <!-- <div class="content__grid">
+                  <div class="content__grid-item">
+                     <div class="content__link">
+                        <img
+                           class="content__image"
+                           src="./graphics/chess.png"
+                           alt="Chess"
+                        />
+                        <button class="content__overlay">Chess</button>
+                        <div class="content__info hide">
+                           <img
+                              class="content__image"
+                              src="./graphics/chess.png"
+                              alt="Chess"
+                           />
+                           <div class="content__row">
+                              <div class="bold">Personal Project</div>
+                              <span class="bold">Description:</span>
+                              A two player Chess game built with vanilla
+                              JavaScript. Some of the challenges I faced were
+                              validating the unique moves of each of the pieces
+                              as well as finding the best way to handle event
+                              listeners when selecting and deselecting a piece.
+                           </div>
+                           <div class="content__row">
+                              <span class="bold">Technologies:</span>
+                              JavaScript
+                           </div>
+                           <div class="content__row">
+                              <a
+                                 class="project-details__link"
+                                 href="http://chess.adamromero.surge.sh/"
+                                 target="_blank"
+                              >
+                                 Visit Project
+                              </a>
+                           </div>
+                           <div class="content__row content__row--nbm">
+                              <a
+                                 class="project-details__link"
+                                 href="https://github.com/adamromero/chess-v2"
+                                 target="_blank"
+                              >
+                                 Visit Github
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="content__grid-item">
+                     <div class="content__link">
+                        <img
+                           class="content__image"
+                           src="./graphics/sorting.png"
+                           alt="Sorting Visualizer"
+                        />
+                        <button class="content__overlay">
+                           Sorting Visualizer
+                        </button>
+                        <div class="content__info hide">
+                           <img
+                              class="content__image"
+                              src="./graphics/sorting.png"
+                              alt="Sorting Visualizer"
+                           />
+                           <div class="content__row">
+                              <span class="bold">Description:</span>
+                              This is a sorting visualizer that allows the user
+                              to sort an array of numbers and observe the
+                              sorting order of the algorithm. The user can
+                              select the sorting algorithm and the array size as
+                              well as the speed of the animation.
+                           </div>
+                           <div class="content__row">
+                              <span class="bold">Technologies:</span>
+                              React, Tailwind
+                           </div>
+                           <div class="content__row">
+                              <a
+                                 class="project-details__link"
+                                 href="http://sorting-visualizer.adamromero.surge.sh/"
+                                 target="_blank"
+                              >
+                                 Visit Project
+                              </a>
+                           </div>
+                           <div class="content__row content__row--nbm">
+                              <a
+                                 class="project-details__link"
+                                 href="https://github.com/adamromero/sorting-visualizer"
+                                 target="_blank"
+                              >
+                                 Visit Github
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div> -->
             </div>
             <div class="project-details">
                <button id="closeDetails" class="project-details__close">
@@ -421,7 +513,7 @@
                <div class="row">
                   <h2 class="content__heading">Contact</h2>
                </div>
-               <div class="row">
+               <!-- <div class="row">
                   <form
                      id="contactForm"
                      class="contact-form"
@@ -465,7 +557,7 @@
                      </button>
                      <p id="formStatus"></p>
                   </form>
-               </div>
+               </div> -->
                <div class="row footer__icons">
                   <a
                      class="footer__icon social-media-icon icon-mail"
@@ -492,6 +584,5 @@
          </div>
          <div class="overlay"></div>
       </div>
-      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
    </body>
 </html>

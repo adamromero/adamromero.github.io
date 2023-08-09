@@ -272,7 +272,7 @@ var app = (function () {
                app.closeProjectDetails();
             });
 
-         app.validateContactForm();
+         //app.validateContactForm();
       },
    };
 
