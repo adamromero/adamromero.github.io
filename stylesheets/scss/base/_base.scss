@@ -1,0 +1,144 @@
+body {
+   margin: 0;
+   padding: 0;
+   font-family: "Josefin Sans", sans-serif;
+}
+
+.preload * {
+   transition: none !important;
+}
+
+[class*=" devicon-"],
+[class^="devicon-"] {
+   color: $jade;
+   font-size: 24px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+   -webkit-text-fill-color: white;
+   -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+   transition: background-color 5000s ease-in-out 0s;
+}
+
+h3 {
+   font-size: 20px;
+   font-weight: normal;
+   text-decoration: underline;
+   margin: 0 0 10px;
+}
+
+input[type="text"] {
+   font-family: "Josefin Sans", sans-serif;
+   font-size: 18px;
+   padding: 5px;
+   border-radius: 3px;
+   margin: 0 0 20px;
+   width: 100%;
+   background: black;
+   color: white;
+   border: 2px solid white;
+   box-sizing: border-box;
+
+   @media (min-width: $mobile) {
+      width: 50%;
+   }
+
+   @include placeholder {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 18px;
+      color: white;
+   }
+
+   &:placeholder-shown {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 18px;
+      color: white;
+   }
+
+   &:active,
+   &:focus {
+      border-color: $jade;
+      color: $jade;
+      outline: none;
+   }
+}
+
+textarea {
+   font-family: "Josefin Sans", sans-serif;
+   font-size: 18px;
+   width: 100%;
+   border-radius: 3px;
+   margin: 0 0 20px;
+   background: black;
+   color: white;
+   border: 2px solid white;
+   padding: 6px;
+   box-sizing: border-box;
+
+   @media (min-width: $mobile) {
+      width: 50%;
+   }
+
+   @include placeholder {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 18px;
+      color: white;
+   }
+
+   &:placeholder-shown {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 18px;
+      color: white;
+   }
+
+   &:active,
+   &:focus {
+      //border-color: $jade;
+      //color: $jade;
+      outline: none;
+   }
+}
+
+input[type="submit"] {
+   padding: 10px;
+   border-radius: 3px;
+   border: 0;
+   font-size: 16px;
+   font-weight: bold;
+   text-transform: uppercase;
+   cursor: pointer;
+   max-width: 200px;
+   width: 100%;
+   background: black;
+   color: white;
+   border: 2px solid white;
+   @include transition(all 0.3s ease-in-out);
+   margin: auto;
+
+   &:hover {
+      border-color: $jade;
+      color: $jade;
+   }
+
+   @media (min-width: $mobile) {
+      display: inline-block;
+   }
+}
+
+a {
+   color: white;
+   transition: 0.2s color;
+   text-decoration: none;
+
+   &:hover {
+      color: $jade;
+   }
+}

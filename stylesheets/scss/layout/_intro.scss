@@ -1,0 +1,126 @@
+.intro {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   margin: 0 2rem;
+
+   @media (min-width: $mobile) {
+      margin: 0 4rem;
+   }
+}
+
+.intro__links {
+   display: flex;
+   justify-content: flex-end;
+   margin: 2rem 0 0;
+}
+
+.intro__nav {
+   display: flex;
+   justify-content: space-between;
+   flex: 0 1 22rem;
+   font-size: 1.1rem;
+}
+
+.intro__navtab {
+   color: $cararra;
+   font-family: "Josefin Sans";
+   font-size: 18px;
+   background: none;
+   border: 0;
+   cursor: pointer;
+
+   &:hover,
+   &:focus,
+   &:active {
+      color: $jade;
+      @include transition(color 0.3s);
+   }
+}
+
+.intro__heading {
+   color: $jade;
+   font-size: 3.5rem;
+   font-weight: 400;
+   margin: 0;
+
+   @media (min-width: $mobile) {
+      font-size: 4rem;
+   }
+}
+
+.intro__subheading {
+   color: $cararra;
+   font-size: 2rem;
+   font-weight: 400;
+   margin: 1rem 0 0;
+
+   @media (min-width: $mobile) {
+      font-size: 2.5rem;
+   }
+}
+
+.intro__content {
+   display: grid;
+   margin: 2rem 0 0;
+
+   @media (min-width: $mobile) {
+      //margin: 5% 0 0;
+      grid-template-columns: 50% 50%;
+      grid-gap: 20px;
+   }
+}
+
+.intro__social {
+   display: flex;
+   margin: 1.5rem 0 0;
+}
+
+.intro__social-links {
+   display: flex;
+   justify-content: space-between;
+   flex: 0 1 13rem;
+}
+
+.intro__social-link {
+   color: white;
+   font-size: 2.5rem;
+
+   &:hover,
+   &:focus,
+   &:active {
+      color: $jade;
+      @include transition(color 0.3s);
+   }
+}
+
+.intro__text {
+   font-size: 1.2rem;
+   line-height: 1.5;
+   margin: 0 0 20px;
+
+   &:last-child {
+      margin: 0;
+   }
+}
+
+.intro__footer {
+   display: flex;
+   justify-content: center;
+   margin: 1rem 0;
+   font-size: 2.5rem;
+
+   @media (min-width: $mobile) {
+      margin: 3rem 0;
+   }
+
+   .icon-arrow-down {
+      color: $jade;
+      font-size: 3rem;
+      cursor: pointer;
+      background: none;
+      padding: 0;
+      border: 0;
+   }
+}

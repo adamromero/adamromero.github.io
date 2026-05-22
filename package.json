@@ -1,0 +1,17 @@
+{
+   "name": "adamromero.github.io",
+   "version": "1.0.0",
+   "description": "",
+   "license": "ISC",
+   "author": "",
+   "type": "commonjs",
+   "main": "app.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build:scss": "sass stylesheets/scss/style.scss:stylesheets/css/ --style compressed",
+      "watch:scss": "sass --watch stylesheets/scss/style.scss:stylesheets/css/style.min.css --style compressed"
+   },
+   "devDependencies": {
+      "sass": "^1.99.0"
+   }
+}
